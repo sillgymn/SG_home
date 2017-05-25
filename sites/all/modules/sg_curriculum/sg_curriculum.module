@@ -1,0 +1,77 @@
+<?php
+/**
+ * Implements hook_menu().
+ *
+ * Provides a simple user interface that tells the developer where to go.
+*/
+
+function sg_curriculum_menu() {
+  $items['sg_curriculum']= array(
+    'page callback' => 'sg_curriculum_page',
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+  );
+ 
+  return $items;
+}
+
+function sg_curriculum_page(){
+  
+drupal_set_title('Õppekava');
+$terms=taxonomy_get_tree(3);
+ $items=_sg_curriculum_taxonomy_tree($terms);
+ 
+  return theme('item_list', array('items' => $items));
+
+/*return theme('station', array(
+          'posts_to_fill' => $posts_to_fill,
+          'party_id' => $user_party_id,
+          'station_id' => $station_id,
+          'existing' => $existing,
+         
+      ));*/
+//return $output;
+
+}
+function sg_curriculum_get_aine_list($tid){
+ $query = db_select('node', 'n');
+ $query->innerJoin('field_data_field_aine_t_p', 't', 'nid = entity_id');
+ $query->fields('n', array('nid', 'title'))
+        ->condition('n.type', 'ainekaart');
+  $query->condition('n.status', 1);
+ 
+  $query->condition('t.field_aine_t_p_tid', $tid);
+   $res=$query->execute();
+  
+ $items=array();
+  while($rec=$res->fetchAssoc()){
+     
+	$items[] = array(
+        'data' => l($rec['title'],'node/'.$rec['nid'].'/ainekaart')       
+  );
+        
+  }
+return $items;
+}
+
+ 
+/**
+ * Helper for mymodule_taxonomy_tree()
+ */
+function _sg_curriculum_taxonomy_tree($terms, $parent = 0) {
+  $items = array();
+
+  foreach ($terms as $term) {
+    
+    if (in_array($parent, $term->parents)) {
+        $children =sg_curriculum_get_aine_list($term->tid);
+    //   var_dump($term);
+      $items[] = array(
+        'data' => $term->name,
+        'children' =>array_merge( $children, _sg_curriculum_taxonomy_tree($terms, $term->tid)),
+      );
+    }
+  }
+ 
+  return $items;
+}
