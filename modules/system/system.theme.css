@@ -1,3 +1,4 @@
+
 /**
  * @file
  * Basic styling for common markup.
@@ -82,8 +83,7 @@ tr.even .form-item {
   font-size: 0.85em;
 }
 label {
-  /*display: none;*/
-   display: block;
+  display: block;
   font-weight: bold;
 }
 label.option {
