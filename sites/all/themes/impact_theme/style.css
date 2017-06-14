@@ -2011,3 +2011,18 @@ border: none !important;
 padding : 0 !important;
 margin : 0 !important;
 }
+
+.mean-container .mean-nav ul li a,
+.mean-container .mean-nav ul li span {
+    display: block;
+    float: left;
+    width: 90%;
+    padding: 1em 5%;
+    margin: 0;
+    text-align: left;
+    color: #fff;
+    border-top: 1px solid #383838;
+    border-top: 1px solid rgba(255,255,255,.5);
+    text-decoration: none;
+    text-transform: uppercase;
+}    
