@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the SG Basic content types feature.
+ */
+
+include_once 'sg_basic_content_types.features.inc';

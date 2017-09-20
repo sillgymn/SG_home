@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the SG opilaseesinduse news feature.
+ */
+
+include_once 'sg_opilaseesinduse_news.features.inc';

@@ -1,0 +1,15 @@
+name = SG text and image formats
+core = 7.x
+package = SG features
+dependencies[] = features
+dependencies[] = filter
+dependencies[] = image
+dependencies[] = wysiwyg
+features[features_api][] = api:2
+features[filter][] = full_html
+features[filter][] = plain_text
+features[image][] = gallery_thumb
+features[image][] = photod
+features[wysiwyg][] = full_html
+features[wysiwyg][] = plain_text
+project path = sites/all/modules/custom
