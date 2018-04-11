@@ -1,0 +1,16 @@
+name = SG opilaseesinduse news
+core = 7.x
+package = SG features
+dependencies[] = node
+dependencies[] = sg_basic_content_types
+dependencies[] = text
+dependencies[] = views
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:2
+features[field_instance][] = node-opilaste_esindus_news-body
+features[node][] = opilaste_esindus_news
+features[user_role][] = opelasesinduse_editor
+features[views_view][] = opelisesinduse_news
+features_exclude[dependencies][ctools] = ctools
+features_exclude[dependencies][features] = features
+project path = sites/all/modules/custom

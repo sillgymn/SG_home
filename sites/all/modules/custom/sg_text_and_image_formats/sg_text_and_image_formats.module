@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the SG text and image formats feature.
+ */
+
+include_once 'sg_text_and_image_formats.features.inc';
