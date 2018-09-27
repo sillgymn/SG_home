@@ -89,6 +89,14 @@ function sg_basic_content_types_node_info() {
       'title_label' => t('Title'),
       'help' => '',
     ),
+    'sg_ads' => array(
+      'name' => t('Kuulutused'),
+      'base' => 'node_content',
+      'description' => '',
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
     'slider_image' => array(
       'name' => t('Slider image'),
       'base' => 'node_content',
