@@ -89,6 +89,14 @@ function sg_basic_content_types_node_info() {
       'title_label' => t('Title'),
       'help' => '',
     ),
+    'right_sidepane_logo' => array(
+      'name' => t('right sidepane logo'),
+      'base' => 'node_content',
+      'description' => '',
+      'has_title' => '1',
+      'title_label' => t('Pealkiri'),
+      'help' => '',
+    ),
     'sg_ads' => array(
       'name' => t('Kuulutused'),
       'base' => 'node_content',

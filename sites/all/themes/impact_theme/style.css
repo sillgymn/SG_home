@@ -2055,3 +2055,24 @@ margin : 0 !important;
 .field.field-name-field-kuulutus {
     text-align: center;
 }
+
+/*********RIGHT SIDEPANE START********************/
+
+#sidebar #block-views-right-sidepane-logod-block {
+    padding: 0;
+}
+.view-right-sidepane-logod .views-row{
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    display: block;
+}
+.view-right-sidepane-logod .views-row:last-child{
+    padding-bottom: 0;
+    border-bottom: none;
+    display: block;
+}
+.view-right-sidepane-logod .views-row a {
+    display: block;
+    text-align: center;
+}
+/*********RIGHT SIDEPANE END********************/
