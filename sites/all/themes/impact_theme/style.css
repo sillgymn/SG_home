@@ -2069,7 +2069,7 @@ margin : 0 !important;
 .view-right-sidepane-logod .views-row:last-child{
     padding-bottom: 0;
     border-bottom: none;
-    display: block;
+
 }
 .view-right-sidepane-logod .views-row a {
     display: block;
