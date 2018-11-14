@@ -43,10 +43,11 @@ function sg_tootajad_views_default_views() {
     'field_foto' => 'field_foto',
     'field_amet' => 'field_amet',
     'title' => 'title',
-    'field_tel' => 'field_tel',
     'field_email' => 'field_email',
     'field_hours' => 'field_hours',
+    'field_tel' => 'field_tel',
     'language' => 'language',
+    'nid' => 'nid',
   );
   $handler->display->display_options['style_options']['default'] = '-1';
   $handler->display->display_options['style_options']['info'] = array(
@@ -55,7 +56,7 @@ function sg_tootajad_views_default_views() {
       'default_sort_order' => 'asc',
       'align' => '',
       'separator' => '',
-      'empty_column' => 0,
+      'empty_column' => 1,
     ),
     'field_amet' => array(
       'sortable' => 0,
@@ -66,13 +67,6 @@ function sg_tootajad_views_default_views() {
     ),
     'title' => array(
       'sortable' => 1,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_tel' => array(
-      'sortable' => 0,
       'default_sort_order' => 'asc',
       'align' => '',
       'separator' => '',
@@ -90,7 +84,21 @@ function sg_tootajad_views_default_views() {
       'separator' => '',
       'empty_column' => 0,
     ),
+    'field_tel' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
     'language' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'nid' => array(
       'sortable' => 0,
       'default_sort_order' => 'asc',
       'align' => '',
@@ -211,11 +219,13 @@ function sg_tootajad_views_default_views() {
   $handler->display->display_options['fields']['field_foto']['label'] = '';
   $handler->display->display_options['fields']['field_foto']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_foto']['empty'] = '<div id="no_photo">&nbsp;</div>';
+  $handler->display->display_options['fields']['field_foto']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_foto']['empty_zero'] = TRUE;
   $handler->display->display_options['fields']['field_foto']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_foto']['type'] = 'colorbox';
   $handler->display->display_options['fields']['field_foto']['settings'] = array(
     'colorbox_node_style' => 'photod',
+    'colorbox_node_style_first' => '',
     'colorbox_image_style' => '',
     'colorbox_gallery' => 'post',
     'colorbox_gallery_custom' => '',

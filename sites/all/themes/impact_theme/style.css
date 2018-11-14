@@ -2075,4 +2075,17 @@ margin : 0 !important;
     display: block;
     text-align: center;
 }
+
+
+.view-SG-projrktid {
+    text-align: center;
+}
+.view-SG-projrktid .views-row {
+    margin: 15px 0;
+   
+}
+
+.view-SG-projrktid h3{
+   font-size: 14px;
+}
 /*********RIGHT SIDEPANE END********************/
