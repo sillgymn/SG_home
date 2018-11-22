@@ -873,25 +873,29 @@ margin: 0 1%;//3%;
 transition: all 0.2s ease 0s;
   text-indent: -99999px;
 }
-.social-profile ul li a:hover{
-  background-position: 0px -40px !important;
-}
+
 .social-profile ul li a:active {
   -moz-box-shadow: inset 0 0 6px #000;
   -webkit-box-shadow: inset 0 0 6px #000;
   box-shadow: inset 0 0 6px #000;
 }
 .social-profile ul li.facebook a {
-  background: url(images/facebook.png) no-repeat 0 0;
+  background: url(images/facebook.png) no-repeat 0 10px;
 }
 .social-profile ul li.vkontakte a{
-  background: url(images/vk.png) no-repeat 0 0;
+  background: url(images/vk.png) no-repeat 0 10px;
 }
-.social-profile ul li.vkontakte a:hover {
-  background-color: rgb(59, 89, 152);
+.social-profile ul li.instagram a{
+  background: url(images/instagram.png) no-repeat 0 10px;
 }
 .social-profile ul li.facebook a:hover {
-  background-color: rgb(59, 89, 152);
+   background: url(images/facebook-hover.png) no-repeat 0 10px;
+}
+.social-profile ul li.vkontakte a:hover {
+   background: url(images/vk-hover.png) no-repeat 0 10px;
+}
+.social-profile ul li.instagram a:hover{
+  background: url(images/instagram-hover.png) no-repeat 0 10px;
 }
 .social-profile ul li.twitter a {
   background: url(images/twitter.png) no-repeat 0 0;

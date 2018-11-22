@@ -90,6 +90,7 @@
         $facebook_url = check_plain(theme_get_setting('facebook_url', 'impact_theme')); 
         $google_plus_url = check_plain(theme_get_setting('google_plus_url', 'impact_theme'));
         $vk_url = check_plain(theme_get_setting('vk_url', 'impact_theme'));
+        $instagram_url = check_plain(theme_get_setting('instagram_url', 'impact_theme'));
         ?>
       <div class="social-profile">
         <ul>
@@ -105,6 +106,10 @@
           <?php if ($vk_url): ?><li class="vkontakte">
             <a target="_blank" title="<?php print $site_name; ?> in VK" href="<?php print $vk_url; ?>"><?php print $site_name; ?> VK </a>
           </li><?php endif; ?>
+          </li><?php endif; ?>
+          <?php if ($instagram_url): ?><li class="instagram">
+            <a target="_blank" title="<?php print $site_name; ?> in Instagram" href="<?php print $instagram_url; ?>"><?php print $site_name; ?> Instagram </a>
+          </li><?php endif; ?>
          <!-- <li class="rss">
             <a target="_blank" title="<?php print $site_name; ?> in RSS" href="<?php print $front_page; ?>rss.xml"><?php print $site_name; ?> RSS </a>
           </li>-->
@@ -113,7 +118,7 @@
        <ul class="language-switcher-locale-url"><li class="et first"><a href="/et" class="language-link " lang="et">EST</a></li>
 <li class="ru last"><a href="/ru" class="language-link" lang="ru">RUS</a></li>
 </ul>
-    <?php endif; ?>
+
      
     <nav id="navigation" role="navigation">
       <div id="main-menu">
