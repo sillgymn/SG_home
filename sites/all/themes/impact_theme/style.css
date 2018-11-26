@@ -848,7 +848,7 @@ margin: 0 1%;//3%;
 .social-profile {
   position: absolute;
   right: 1em;
-  top: 2em;
+  top: 1em;
 }
 .social-profile ul {
   list-style: none;
@@ -857,6 +857,7 @@ margin: 0 1%;//3%;
 }
 .social-profile ul li {
   float: left;
+ 
 }
 .social-profile ul li a {
   display: block;
