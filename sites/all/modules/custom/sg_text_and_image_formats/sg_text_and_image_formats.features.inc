@@ -19,7 +19,7 @@ function sg_text_and_image_formats_image_default_styles() {
         'data' => array(
           'width' => 640,
           'height' => '',
-          'upscale' => 1,
+          'upscale' => 0,
         ),
         'weight' => 1,
       ),

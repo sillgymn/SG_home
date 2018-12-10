@@ -119,10 +119,10 @@ function sg_text_and_image_formats_wysiwyg_default_profiles() {
       'autoresize_max_height' => '',
     ),
     'preferences' => array(
+      'add_to_summaries' => FALSE,
       'default' => 1,
-      'user_choose' => 0,
       'show_toggle' => 1,
-      'add_to_summaries' => 0,
+      'user_choose' => 0,
       'version' => '3.5.8',
     ),
     'name' => 'formatfull_html',
