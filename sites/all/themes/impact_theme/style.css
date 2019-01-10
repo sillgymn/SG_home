@@ -430,8 +430,7 @@ text-shadow: none;
   list-style: none;
   margin: 0;
   padding-left: 0;
-  max-height: 42px;
-  overflow: hidden;
+ 
 }
 #main-menu > ul.menu li,
 #main-menu > span{
