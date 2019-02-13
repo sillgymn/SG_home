@@ -2121,3 +2121,17 @@ margin : 0 !important;
    margin-bottom: 15px;
 }
 }
+
+
+/***************MUUSEUMI PAGE START *********/
+.view.view-sg-muuseum .views-row {
+  display: inline-block;
+  margin: 10px;
+}
+.view.view-sg-muuseum .views-row .views-field-title {
+   display: block;
+   text-align: center;
+}
+.field-name-field-sg-muuseumi-pildid .field-item {
+    display: inline-block
+}
