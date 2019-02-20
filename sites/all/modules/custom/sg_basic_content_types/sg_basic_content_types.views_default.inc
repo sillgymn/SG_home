@@ -11,6 +11,118 @@ function sg_basic_content_types_views_default_views() {
   $export = array();
 
   $view = new view();
+  $view->name = 'SG_projrktid';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = ' Right Sidepane projrktid';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'KÄIMASOLEVAD PROJEKTID';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_text'] = 'veel';
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Rakenda';
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Lähtesta';
+  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sorteerimise alus';
+  $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Kasvav';
+  $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Kahanev';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['inline'] = array(
+    'nothing' => 'nothing',
+  );
+  $handler->display->display_options['row_options']['separator'] = '<br>';
+  /* Väli: Sisu: Pealkiri */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['text'] = '<p align="center">[title]</p>';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_type'] = 'h3';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Väli: Sisu: Image */
+  $handler->display->display_options['fields']['field_footer_logo_image']['id'] = 'field_footer_logo_image';
+  $handler->display->display_options['fields']['field_footer_logo_image']['table'] = 'field_data_field_footer_logo_image';
+  $handler->display->display_options['fields']['field_footer_logo_image']['field'] = 'field_footer_logo_image';
+  $handler->display->display_options['fields']['field_footer_logo_image']['label'] = '';
+  $handler->display->display_options['fields']['field_footer_logo_image']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_footer_logo_image']['alter']['text'] = '<p align="center">[field_footer_logo_image] </p>';
+  $handler->display->display_options['fields']['field_footer_logo_image']['element_type'] = 'h1';
+  $handler->display->display_options['fields']['field_footer_logo_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_footer_logo_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_footer_logo_image']['settings'] = array(
+    'image_style' => '',
+    'image_link' => '',
+  );
+  /* Väli: Sisu: Link */
+  $handler->display->display_options['fields']['field_footer_logo_link']['id'] = 'field_footer_logo_link';
+  $handler->display->display_options['fields']['field_footer_logo_link']['table'] = 'field_data_field_footer_logo_link';
+  $handler->display->display_options['fields']['field_footer_logo_link']['field'] = 'field_footer_logo_link';
+  $handler->display->display_options['fields']['field_footer_logo_link']['label'] = '';
+  $handler->display->display_options['fields']['field_footer_logo_link']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_footer_logo_link']['element_label_colon'] = FALSE;
+  /* Väli: Globaalne: Kohandatud tekst */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<a href=\'[field_footer_logo_link]\' target="_blank" alt=\'[title]\' title=\'[title]\'>[field_footer_logo_image]</a>';
+  $handler->display->display_options['fields']['nothing']['element_type'] = 'div';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nothing']['element_wrapper_type'] = 'div';
+  /* Filtri kriteeriumid: Sisu: Avaldatud */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filtri kriteeriumid: Sisu: Liik */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'projektid' => 'projektid',
+  );
+  /* Filtri kriteeriumid: Sisu: Projekt periood (field_project_periood:value2) */
+  $handler->display->display_options['filters']['field_project_periood_value2']['id'] = 'field_project_periood_value2';
+  $handler->display->display_options['filters']['field_project_periood_value2']['table'] = 'field_data_field_project_periood';
+  $handler->display->display_options['filters']['field_project_periood_value2']['field'] = 'field_project_periood_value2';
+  $handler->display->display_options['filters']['field_project_periood_value2']['operator'] = '>=';
+  $handler->display->display_options['filters']['field_project_periood_value2']['value']['value'] = 'now';
+
+  /* Display: Block */
+  $handler = $view->new_display('block', 'Block', 'block');
+  $translatables['SG_projrktid'] = array(
+    t('Master'),
+    t('KÄIMASOLEVAD PROJEKTID'),
+    t('veel'),
+    t('Rakenda'),
+    t('Lähtesta'),
+    t('Sorteerimise alus'),
+    t('Kasvav'),
+    t('Kahanev'),
+    t('<p align="center">[title]</p>'),
+    t('<p align="center">[field_footer_logo_image] </p>'),
+    t('<a href=\'[field_footer_logo_link]\' target="_blank" alt=\'[title]\' title=\'[title]\'>[field_footer_logo_image]</a>'),
+    t('Block'),
+  );
+  $export['SG_projrktid'] = $view;
+
+  $view = new view();
   $view->name = 'banners';
   $view->description = 'Баннеры в правой области';
   $view->tag = 'default';
@@ -811,6 +923,105 @@ print "<div><a class=\' button\'  href=\'/node/{$row->nid}/edit?destination=doku
     t('Uudiste arhiiv'),
   );
   $export['news'] = $view;
+
+  $view = new view();
+  $view->name = 'right_sidepane_logod';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'Right Sidepane logod';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_text'] = 'veel';
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Rakenda';
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Lähtesta';
+  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sorteerimise alus';
+  $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Kasvav';
+  $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Kahanev';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['inline'] = array(
+    'nothing' => 'nothing',
+  );
+  $handler->display->display_options['row_options']['separator'] = '<br>';
+  /* Väli: Sisu: Pealkiri */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Väli: Sisu: Image */
+  $handler->display->display_options['fields']['field_footer_logo_image']['id'] = 'field_footer_logo_image';
+  $handler->display->display_options['fields']['field_footer_logo_image']['table'] = 'field_data_field_footer_logo_image';
+  $handler->display->display_options['fields']['field_footer_logo_image']['field'] = 'field_footer_logo_image';
+  $handler->display->display_options['fields']['field_footer_logo_image']['label'] = '';
+  $handler->display->display_options['fields']['field_footer_logo_image']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_footer_logo_image']['element_type'] = 'h1';
+  $handler->display->display_options['fields']['field_footer_logo_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_footer_logo_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_footer_logo_image']['settings'] = array(
+    'image_style' => '',
+    'image_link' => '',
+  );
+  /* Väli: Sisu: Link */
+  $handler->display->display_options['fields']['field_footer_logo_link']['id'] = 'field_footer_logo_link';
+  $handler->display->display_options['fields']['field_footer_logo_link']['table'] = 'field_data_field_footer_logo_link';
+  $handler->display->display_options['fields']['field_footer_logo_link']['field'] = 'field_footer_logo_link';
+  $handler->display->display_options['fields']['field_footer_logo_link']['label'] = '';
+  $handler->display->display_options['fields']['field_footer_logo_link']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_footer_logo_link']['element_label_colon'] = FALSE;
+  /* Väli: Globaalne: Kohandatud tekst */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<a href=\'[field_footer_logo_link]\' target="_blank" alt=\'[title]\' title=\'[title]\'>[field_footer_logo_image]</a>';
+  $handler->display->display_options['fields']['nothing']['element_type'] = 'div';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nothing']['element_wrapper_type'] = 'div';
+  /* Filtri kriteeriumid: Sisu: Avaldatud */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filtri kriteeriumid: Sisu: Liik */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'right_sidepane_logo' => 'right_sidepane_logo',
+  );
+
+  /* Display: Block */
+  $handler = $view->new_display('block', 'Block', 'block');
+  $translatables['right_sidepane_logod'] = array(
+    t('Master'),
+    t('veel'),
+    t('Rakenda'),
+    t('Lähtesta'),
+    t('Sorteerimise alus'),
+    t('Kasvav'),
+    t('Kahanev'),
+    t('<a href=\'[field_footer_logo_link]\' target="_blank" alt=\'[title]\' title=\'[title]\'>[field_footer_logo_image]</a>'),
+    t('Block'),
+  );
+  $export['right_sidepane_logod'] = $view;
 
   $view = new view();
   $view->name = 'slider';

@@ -8,6 +8,7 @@ dependencies[] = wysiwyg
 features[features_api][] = api:2
 features[filter][] = full_html
 features[filter][] = plain_text
+features[image][] = ad_images
 features[image][] = gallery_thumb
 features[image][] = photod
 features[wysiwyg][] = full_html

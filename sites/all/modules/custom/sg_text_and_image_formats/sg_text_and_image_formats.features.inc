@@ -10,6 +10,22 @@
 function sg_text_and_image_formats_image_default_styles() {
   $styles = array();
 
+  // Exported image style: ad_images.
+  $styles['ad_images'] = array(
+    'label' => 'ad images',
+    'effects' => array(
+      5 => array(
+        'name' => 'image_scale',
+        'data' => array(
+          'width' => 640,
+          'height' => '',
+          'upscale' => 0,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
   // Exported image style: gallery_thumb.
   $styles['gallery_thumb'] = array(
     'label' => 'gallery_thumb',
@@ -32,8 +48,8 @@ function sg_text_and_image_formats_image_default_styles() {
       2 => array(
         'name' => 'image_scale_and_crop',
         'data' => array(
-          'width' => 50,
-          'height' => 50,
+          'width' => 100,
+          'height' => 100,
         ),
         'weight' => 1,
       ),

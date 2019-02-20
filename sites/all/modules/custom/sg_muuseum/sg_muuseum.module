@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the sg_muuseum feature.
+ */
+
+include_once 'sg_muuseum.features.inc';

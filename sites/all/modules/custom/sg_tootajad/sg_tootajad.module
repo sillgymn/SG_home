@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the SG tootajad feature.
+ */
+
+include_once 'sg_tootajad.features.inc';

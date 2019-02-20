@@ -114,6 +114,10 @@ function impact_theme_preprocess_node(&$variables) {
   if ($variables['view_mode'] == 'full' && node_is_page($variables['node'])) {
     $variables['classes_array'][] = 'node-full';
   }
+  if($variables['view_mode'] == 'teaser') {
+    $variables['theme_hook_suggestions'][] = 'node__' . $variables['node']->type . '__teaser';   
+    $variables['theme_hook_suggestions'][] = 'node__' . $variables['node']->nid . '__teaser';
+  }
 
   $variables['date'] = t('!datetime', array('!datetime' =>  date('d.m.Y', $variables['created'])));
    $field = field_get_items('node', $node, 'body');
@@ -121,15 +125,23 @@ function impact_theme_preprocess_node(&$variables) {
   if ($field) {
     $show_read_more = 1;
     $body = $node->body['und'][0]['safe_value'];
-    if (stristr($body, "<!--break-->")) { // Lets make sure that this is indeed the end of article.
-      $rest_of_the_text = substr($body, strpos($body, "<!--break-->"));
-      if (strlen($rest_of_the_text) < strlen("<!--break--></p><p>&nbsp;</p>"))
-        $show_read_more = 0;
-    } else if ($variables['content']['body'][0]['#markup'] == $body)
-      $show_read_more = 0;
-    if($show_read_more == 0) {
-        unset($variables['content']['links']['node']['#links']['node-readmore']);
+    $galery_images =  $field = field_get_items('node', $node, 'field_news_gallery'); 
+    if (isset($galery_images) && count($galery_images) > 1 )  {
+          
     }
+    else {
+        if (stristr($body, "<!--break-->")) { // Lets make sure that this is indeed the end of article.
+          $rest_of_the_text = substr($body, strpos($body, "<!--break-->"));
+          if (strlen($rest_of_the_text) < strlen("<!--break--></p><p>&nbsp;</p>"))
+            $show_read_more = 0;
+        } else if ($variables['content']['body'][0]['#markup'] == $body) {
+            $show_read_more = 0;
+        }
+        if($show_read_more == 0) {
+            unset($variables['content']['links']['node']['#links']['node-readmore']);
+        }
+    }
+    
   }
 }
 
