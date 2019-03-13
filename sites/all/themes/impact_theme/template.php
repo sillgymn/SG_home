@@ -179,3 +179,20 @@ function  impact_theme_process_html(&$variables) {
     _color_html_alter($variables);
   }
 }
+/**
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ */
+/*function  impact_theme_process_page(&$variables) {
+  // Hook into color.module.
+  if (module_exists('color')) {
+    _color_page_alter($variables);
+  }
+}*/
+
+
