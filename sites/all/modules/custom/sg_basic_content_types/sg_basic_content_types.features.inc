@@ -26,11 +26,11 @@ function sg_basic_content_types_views_api($module = NULL, $api = NULL) {
 function sg_basic_content_types_node_info() {
   $items = array(
     'article' => array(
-      'name' => t('Article'),
+      'name' => t('Artikkel'),
       'base' => 'node_content',
-      'description' => t('Use <em>articles</em> for time-sensitive content like news, press releases or blog posts.'),
+      'description' => t('<em>Artikleid</em> kasutatakse aeguva sisu jaoks nagu uudised, pressiteated või blogi sissekanded.'),
       'has_title' => '1',
-      'title_label' => t('Title'),
+      'title_label' => t('Pealkiri'),
       'help' => '',
     ),
     'content_slider' => array(
