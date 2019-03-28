@@ -39,10 +39,17 @@ function sg_basic_content_types_form_validate(&$form, &$form_state) {
     } 
   } else {
     if(!empty($kuulutus_unpublish_date)) {
-      $published_date = $form_state['node']->field_kuulutus_unpublish_date['und'][0]['value'];
-      if ($kuulutus_unpublish_date != $published_date) {
+      if(empty($form_state['node']->field_kuulutus_unpublish_date['und'][0]['value'])) {
         if ($kuulutus_unpublish_date < time()) {
           form_set_error('field_kuulutus_unpublish_date', t('Past date cannot be set.'));
+        }
+      }  
+      else {
+        $published_date = $form_state['node']->field_kuulutus_unpublish_date['und'][0]['value'];
+        if ($kuulutus_unpublish_date != $published_date) {
+          if ($kuulutus_unpublish_date < time()) {
+            form_set_error('field_kuulutus_unpublish_date', t('Past date cannot be set.'));
+          }
         }
       }
     }  
