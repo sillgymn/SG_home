@@ -1,0 +1,74 @@
+
+div.view.view-t-pakkumised.view-id-t_pakkumised.view-display-id-page .view-content .views-row{
+  border-top: 2px solid black;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+  padding: 10px;
+  padding-top: 2px;
+  position: relative; 
+}
+div.view.view-t-pakkumised.view-id-t_pakkumised.view-display-id-page .view-content{
+  border-bottom: 2px solid black;
+}
+
+div.views-field.views-field-title{
+max-width: 100px;
+}
+span.field-content a{
+  color: black;
+}
+div.views-field.views-field-field-application-deadline{ 
+max-width: 300px;
+}
+
+
+div.views-field.views-field-field-toopakkumised-email{
+  max-width: 230px;
+  height: 40px;
+  text-align: left !important;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+ 
+}
+span.views-label.views-label-field-toopakkumised-email{
+  background: url('close-envelope.png') no-repeat;
+  max-width: 30px;
+  width: 30px;
+  height: 20px;
+  padding-left: 20px;
+  padding-top: 0px;
+  position: relative;
+  top: 10px;
+  right: 10px;
+}
+div.views-field.views-field-field-toopakkumised-email .field-content{
+  max-width: 300px;
+  position: relative;
+  padding-left: 55px;
+  top: -13px;
+}
+
+
+
+div.views-field.views-field-title{
+ 
+  text-transform: uppercase;
+  font-size: 150% !important;
+  font-weight: bold !important;
+}
+
+div.views-field.views-field-field-application-deadline {
+  max-width: 500px;
+position: relative;
+top: -7px;
+}
+div.views-field.views-field-field-application-deadline .field-content {
+  position: absolute;
+  top: 0px;
+  left: 140px;
+  }
+
+
+
+
