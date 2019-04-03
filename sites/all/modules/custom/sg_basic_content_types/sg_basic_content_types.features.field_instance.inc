@@ -1269,6 +1269,61 @@ function sg_basic_content_types_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-sg_ads-field_kuulutus_unpublish_date'.
+  $field_instances['node-sg_ads-field_kuulutus_unpublish_date'] = array(
+    'bundle' => 'sg_ads',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'date',
+        'settings' => array(
+          'format_type' => 'long',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+          'show_remaining_days' => FALSE,
+        ),
+        'type' => 'date_default',
+        'weight' => 2,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_kuulutus_unpublish_date',
+    'label' => 'Скрыть с главной страницы',
+    'required' => 0,
+    'settings' => array(
+      'default_value' => 'blank',
+      'default_value2' => 'same',
+      'default_value_code' => '',
+      'default_value_code2' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'date',
+      'settings' => array(
+        'increment' => 15,
+        'input_format' => 'd.m.Y',
+        'input_format_custom' => '',
+        'label_position' => 'above',
+        'no_fieldset' => 0,
+        'text_parts' => array(),
+        'year_range' => '-3:+3',
+      ),
+      'type' => 'date_popup',
+      'weight' => -2,
+    ),
+  );
+
   // Exported field_instance: 'node-slider_image-field_slider_image'.
   $field_instances['node-slider_image-field_slider_image'] = array(
     'bundle' => 'slider_image',
@@ -1343,6 +1398,7 @@ function sg_basic_content_types_field_default_field_instances() {
   t('pilt');
   t('Õppeaasta');
   t('Порядковый номер раздела в общем списке');
+  t('Скрыть с главной страницы');
 
   return $field_instances;
 }

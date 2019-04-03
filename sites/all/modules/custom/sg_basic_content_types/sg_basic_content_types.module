@@ -1,7 +1,57 @@
 <?php
+
 /**
  * @file
  * Code for the SG Basic content types feature.
  */
 
 include_once 'sg_basic_content_types.features.inc';
+
+function sg_basic_content_types_cron() {
+  $query = new EntityFieldQuery();
+  $entities = $query->entityCondition('entity_type', 'node')
+    ->propertyCondition('type', 'sg_ads')
+    ->propertyCondition('promote', '1')
+    ->fieldCondition('field_kuulutus_unpublish_date', 'value', time(), '<')
+    ->execute();
+  if(!empty($entities)) {
+    foreach ($entities['node'] as $nodes) {
+      $node = node_load($nodes->nid);
+      $node->promote = 0;
+      node_save($node);
+    }
+  }   
+}
+
+function sg_basic_content_types_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id == 'sg_ads_node_form') {
+    $form['actions']['submit']['#validate'][] = 'sg_basic_content_types_form_validate';
+  }
+}
+function sg_basic_content_types_form_validate(&$form, &$form_state) {
+  $kuulutus_unpublish_date = $form_state['values']['field_kuulutus_unpublish_date']['und'][0]['value'];
+  $is_published = $form['nid']['#value'];
+  if (empty($is_published)) {
+    if (!empty($kuulutus_unpublish_date)) {
+      if ($kuulutus_unpublish_date < time()) {
+        form_set_error('field_kuulutus_unpublish_date', t('Past date cannot be set.'));
+      }
+    } 
+  } else {
+    if(!empty($kuulutus_unpublish_date)) {
+      if(empty($form_state['node']->field_kuulutus_unpublish_date['und'][0]['value'])) {
+        if ($kuulutus_unpublish_date < time()) {
+          form_set_error('field_kuulutus_unpublish_date', t('Past date cannot be set.'));
+        }
+      }  
+      else {
+        $published_date = $form_state['node']->field_kuulutus_unpublish_date['und'][0]['value'];
+        if ($kuulutus_unpublish_date != $published_date) {
+          if ($kuulutus_unpublish_date < time()) {
+            form_set_error('field_kuulutus_unpublish_date', t('Past date cannot be set.'));
+          }
+        }
+      }
+    }  
+  }
+}
