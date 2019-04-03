@@ -2,6 +2,7 @@ name = Impact Theme
 description = Impact Theme is a premium Drupal 7 theme. Developed by <a href="http://www.devsaran.com">devsaran.com</a>.
 core = 7.x
 engine = phptemplate
+
 stylesheets[all][] = style.css
 scripts[] = js/main-menu.js
 scripts[] = js/pngfix.min.js
