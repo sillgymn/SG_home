@@ -10,69 +10,19 @@
 function sg_pakkumised_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-t_pakkumised-body'.
-  $field_instances['node-t_pakkumised-body'] = array(
+  // Exported field_instance: 'node-t_pakkumised-field_additional_info'.
+  $field_instances['node-t_pakkumised-field_additional_info'] = array(
     'bundle' => 't_pakkumised',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'hidden',
+        'label' => 'above',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(
-          'trim_length' => 600,
-        ),
-        'type' => 'text_summary_or_trimmed',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'body',
-    'label' => 'Body',
-    'required' => FALSE,
-    'settings' => array(
-      'display_summary' => TRUE,
-      'text_processing' => 1,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 20,
-        'summary_rows' => 5,
-      ),
-      'type' => 'text_textarea_with_summary',
-      'weight' => 2,
-    ),
-  );
-
-  // Exported field_instance: 'node-t_pakkumised-field_application_deadline'.
-  $field_instances['node-t_pakkumised-field_application_deadline'] = array(
-    'bundle' => 't_pakkumised',
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'date',
-        'settings' => array(
-          'format_type' => 'long',
-          'fromto' => 'both',
-          'multiple_from' => '',
-          'multiple_number' => '',
-          'multiple_to' => '',
-          'show_remaining_days' => FALSE,
-        ),
-        'type' => 'date_default',
-        'weight' => 9,
+        'weight' => 15,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -82,8 +32,54 @@ function sg_pakkumised_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_application_deadline',
-    'label' => 'Lõpptähtaeg',
+    'field_name' => 'field_additional_info',
+    'label' => 'Lisainfo',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 17,
+    ),
+  );
+
+  // Exported field_instance: 'node-t_pakkumised-field_application_submission'.
+  $field_instances['node-t_pakkumised-field_application_submission'] = array(
+    'bundle' => 't_pakkumised',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'inline',
+        'module' => 'date',
+        'settings' => array(
+          'format_type' => 'short',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+          'show_remaining_days' => 0,
+        ),
+        'type' => 'date_default',
+        'weight' => 4,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_application_submission',
+    'label' => 'Kandideerimise tähtaeg',
     'required' => 0,
     'settings' => array(
       'default_value' => 'now',
@@ -105,65 +101,23 @@ function sg_pakkumised_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 4,
+      'weight' => 5,
     ),
   );
 
-  // Exported field_instance: 'node-t_pakkumised-field_file'.
-  $field_instances['node-t_pakkumised-field_file'] = array(
-    'bundle' => 't_pakkumised',
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'file',
-        'settings' => array(),
-        'type' => 'file_default',
-        'weight' => 8,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_file',
-    'label' => 'File',
-    'required' => 0,
-    'settings' => array(
-      'description_field' => 0,
-      'file_directory' => '',
-      'file_extensions' => 'txt',
-      'max_filesize' => '',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'file',
-      'settings' => array(
-        'progress_indicator' => 'throbber',
-      ),
-      'type' => 'file_generic',
-      'weight' => 10,
-    ),
-  );
-
-  // Exported field_instance: 'node-t_pakkumised-field_required_docs'.
-  $field_instances['node-t_pakkumised-field_required_docs'] = array(
+  // Exported field_instance: 'node-t_pakkumised-field_computer_skills'.
+  $field_instances['node-t_pakkumised-field_computer_skills'] = array(
     'bundle' => 't_pakkumised',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
-        'module' => 'list',
+        'label' => 'inline',
+        'module' => 'text',
         'settings' => array(),
-        'type' => 'list_default',
-        'weight' => 3,
+        'type' => 'text_default',
+        'weight' => 13,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -173,23 +127,26 @@ function sg_pakkumised_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_required_docs',
-    'label' => 'Required docs',
+    'field_name' => 'field_computer_skills',
+    'label' => 'Arvutioskus',
     'required' => 0,
     'settings' => array(
+      'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_buttons',
-      'weight' => 6,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 15,
     ),
   );
 
-  // Exported field_instance: 'node-t_pakkumised-field_short_description'.
-  $field_instances['node-t_pakkumised-field_short_description'] = array(
+  // Exported field_instance: 'node-t_pakkumised-field_educational_area'.
+  $field_instances['node-t_pakkumised-field_educational_area'] = array(
     'bundle' => 't_pakkumised',
     'default_value' => NULL,
     'deleted' => 0,
@@ -200,7 +157,7 @@ function sg_pakkumised_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 6,
+        'weight' => 10,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -210,8 +167,208 @@ function sg_pakkumised_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_short_description',
-    'label' => 'Short description',
+    'field_name' => 'field_educational_area',
+    'label' => 'Hariduse valdkond',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 12,
+    ),
+  );
+
+  // Exported field_instance: 'node-t_pakkumised-field_educational_level'.
+  $field_instances['node-t_pakkumised-field_educational_level'] = array(
+    'bundle' => 't_pakkumised',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'inline',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 9,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_educational_level',
+    'label' => 'Haridustase',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 11,
+    ),
+  );
+
+  // Exported field_instance: 'node-t_pakkumised-field_else_requirements'.
+  $field_instances['node-t_pakkumised-field_else_requirements'] = array(
+    'bundle' => 't_pakkumised',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'inline',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 14,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_else_requirements',
+    'label' => 'Muud nõuded',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 16,
+    ),
+  );
+
+  // Exported field_instance: 'node-t_pakkumised-field_email_workoffer'.
+  $field_instances['node-t_pakkumised-field_email_workoffer'] = array(
+    'bundle' => 't_pakkumised',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 17,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_email_workoffer',
+    'label' => 'Email',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 19,
+    ),
+  );
+
+  // Exported field_instance: 'node-t_pakkumised-field_language'.
+  $field_instances['node-t_pakkumised-field_language'] = array(
+    'bundle' => 't_pakkumised',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 12,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_language',
+    'label' => 'Keeleoskus',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 14,
+    ),
+  );
+
+  // Exported field_instance: 'node-t_pakkumised-field_our_offer'.
+  $field_instances['node-t_pakkumised-field_our_offer'] = array(
+    'bundle' => 't_pakkumised',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 8,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_our_offer',
+    'label' => 'Omalt poolt pakume',
     'required' => 0,
     'settings' => array(
       'text_processing' => 0,
@@ -228,8 +385,8 @@ function sg_pakkumised_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-t_pakkumised-field_toopakkumised_email'.
-  $field_instances['node-t_pakkumised-field_toopakkumised_email'] = array(
+  // Exported field_instance: 'node-t_pakkumised-field_required_docs'.
+  $field_instances['node-t_pakkumised-field_required_docs'] = array(
     'bundle' => 't_pakkumised',
     'default_value' => NULL,
     'deleted' => 0,
@@ -237,10 +394,10 @@ function sg_pakkumised_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
+        'module' => 'list',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 2,
+        'type' => 'list_default',
+        'weight' => 16,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -250,21 +407,18 @@ function sg_pakkumised_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_toopakkumised_email',
-    'label' => 'Email',
+    'field_name' => 'field_required_docs',
+    'label' => 'Kandideerimiseks vajalikud dokumendid',
     'required' => 0,
     'settings' => array(
-      'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 5,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 18,
     ),
   );
 
@@ -291,7 +445,7 @@ function sg_pakkumised_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_tooulesanded',
-    'label' => 'Work tasks',
+    'label' => 'Töö kirjeldus',
     'required' => 0,
     'settings' => array(
       'text_processing' => 0,
@@ -304,7 +458,127 @@ function sg_pakkumised_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 7,
+      'weight' => 8,
+    ),
+  );
+
+  // Exported field_instance: 'node-t_pakkumised-field_wage'.
+  $field_instances['node-t_pakkumised-field_wage'] = array(
+    'bundle' => 't_pakkumised',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 2,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_wage',
+    'label' => 'Tootasu (bruto)',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 3,
+    ),
+  );
+
+  // Exported field_instance: 'node-t_pakkumised-field_work_duration'.
+  $field_instances['node-t_pakkumised-field_work_duration'] = array(
+    'bundle' => 't_pakkumised',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 3,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_work_duration',
+    'label' => 'Töösuhte kestus',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 4,
+    ),
+  );
+
+  // Exported field_instance: 'node-t_pakkumised-field_work_experience'.
+  $field_instances['node-t_pakkumised-field_work_experience'] = array(
+    'bundle' => 't_pakkumised',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'inline',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 11,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_work_experience',
+    'label' => 'Nõutav varasem töökogemus samal ametialal',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 13,
     ),
   );
 
@@ -320,7 +594,7 @@ function sg_pakkumised_field_default_field_instances() {
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',
-        'weight' => 5,
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -341,7 +615,47 @@ function sg_pakkumised_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 8,
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'node-t_pakkumised-field_work_place'.
+  $field_instances['node-t_pakkumised-field_work_place'] = array(
+    'bundle' => 't_pakkumised',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 6,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_work_place',
+    'label' => 'Töökoha asukoht',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 7,
     ),
   );
 
@@ -352,18 +666,18 @@ function sg_pakkumised_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'inline',
         'module' => 'date',
         'settings' => array(
-          'format_type' => 'long',
+          'format_type' => 'short',
           'fromto' => 'both',
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
-          'show_remaining_days' => FALSE,
+          'show_remaining_days' => 0,
         ),
         'type' => 'date_default',
-        'weight' => 1,
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -374,7 +688,7 @@ function sg_pakkumised_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_work_starting_date',
-    'label' => 'Work starting date',
+    'label' => 'Tööleasumise aeg',
     'required' => 0,
     'settings' => array(
       'default_value' => 'now',
@@ -396,21 +710,29 @@ function sg_pakkumised_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 3,
+      'weight' => 6,
     ),
   );
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Body');
+  t('Arvutioskus');
   t('Email');
-  t('File');
-  t('Lõpptähtaeg');
-  t('Required docs');
-  t('Short description');
+  t('Hariduse valdkond');
+  t('Haridustase');
+  t('Kandideerimise tähtaeg');
+  t('Kandideerimiseks vajalikud dokumendid');
+  t('Keeleoskus');
+  t('Lisainfo');
+  t('Muud nõuded');
+  t('Nõutav varasem töökogemus samal ametialal');
+  t('Omalt poolt pakume');
+  t('Tootasu (bruto)');
+  t('Töö kirjeldus');
+  t('Töökoha asukoht');
+  t('Tööleasumise aeg');
+  t('Töösuhte kestus');
   t('Work load');
-  t('Work starting date');
-  t('Work tasks');
 
   return $field_instances;
 }

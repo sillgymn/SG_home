@@ -21,7 +21,7 @@ function sg_pakkumised_node_info() {
       'base' => 'node_content',
       'description' => t('tööpakummised'),
       'has_title' => '1',
-      'title_label' => t('Amet'),
+      'title_label' => t('Ametinimetus'),
       'help' => '',
     ),
   );

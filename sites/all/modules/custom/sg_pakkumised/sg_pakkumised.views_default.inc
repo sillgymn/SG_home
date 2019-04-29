@@ -38,13 +38,16 @@ function sg_pakkumised_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Content: Lõpptähtaeg */
-  $handler->display->display_options['fields']['field_application_deadline']['id'] = 'field_application_deadline';
-  $handler->display->display_options['fields']['field_application_deadline']['table'] = 'field_data_field_application_deadline';
-  $handler->display->display_options['fields']['field_application_deadline']['field'] = 'field_application_deadline';
-  $handler->display->display_options['fields']['field_application_deadline']['label'] = 'Application deadline';
-  $handler->display->display_options['fields']['field_application_deadline']['settings'] = array(
-    'format_type' => 'long',
+  /* Field: Content: Email */
+  $handler->display->display_options['fields']['field_email_workoffer']['id'] = 'field_email_workoffer';
+  $handler->display->display_options['fields']['field_email_workoffer']['table'] = 'field_data_field_email_workoffer';
+  $handler->display->display_options['fields']['field_email_workoffer']['field'] = 'field_email_workoffer';
+  /* Field: Content: Kandideerimise tähtaeg */
+  $handler->display->display_options['fields']['field_application_submission']['id'] = 'field_application_submission';
+  $handler->display->display_options['fields']['field_application_submission']['table'] = 'field_data_field_application_submission';
+  $handler->display->display_options['fields']['field_application_submission']['field'] = 'field_application_submission';
+  $handler->display->display_options['fields']['field_application_submission']['settings'] = array(
+    'format_type' => 'medium',
     'custom_date_format' => '',
     'fromto' => 'both',
     'multiple_number' => '',
@@ -52,12 +55,6 @@ function sg_pakkumised_views_default_views() {
     'multiple_to' => '',
     'show_remaining_days' => 0,
   );
-  /* Field: Content: Email */
-  $handler->display->display_options['fields']['field_toopakkumised_email']['id'] = 'field_toopakkumised_email';
-  $handler->display->display_options['fields']['field_toopakkumised_email']['table'] = 'field_data_field_toopakkumised_email';
-  $handler->display->display_options['fields']['field_toopakkumised_email']['field'] = 'field_toopakkumised_email';
-  $handler->display->display_options['fields']['field_toopakkumised_email']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['field_toopakkumised_email']['alter']['target'] = 'mailto:[field_toopakkumised_email-value] ';
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -96,8 +93,8 @@ function sg_pakkumised_views_default_views() {
     t('‹ previous'),
     t('next ›'),
     t('last »'),
-    t('Application deadline'),
     t('Email'),
+    t('Kandideerimise tähtaeg'),
     t('Page'),
   );
   $export['t_pakkumised'] = $view;
