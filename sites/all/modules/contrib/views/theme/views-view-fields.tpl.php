@@ -24,13 +24,27 @@
  * @ingroup views_templates
  */
 ?>
-<?php foreach ($fields as $id => $field): ?>
-  <?php if (!empty($field->separator)): ?>
+<?php foreach ($fields as $id => $field) : ?>
+  
+  <?php if (!empty($field->separator)) : ?>
     <?php print $field->separator; ?>
+    
   <?php endif; ?>
 
   <?php print $field->wrapper_prefix; ?>
     <?php print $field->label_html; ?>
     <?php print $field->content; ?>
   <?php print $field->wrapper_suffix; ?>
+  <?php if (strpos($field->content, 'date-display-single') !== false) : ?>
+  <?php foreach ($field->handler->view->result as $zxc => $asd) : ?>
+  <?php if ($asd->nid == $field->raw) : ?>
+  
+  <?php dpm($endTime = $asd->field_field_application_submission[0]['raw']['value']);
+  if ($endTime < time()) : ?>
+<b><font color="red">AEGNUD</font></b>
+  <?php endif ?>
+    <?php endif; ?>
+    <?php endforeach; ?>
+    <?php endif; ?>
+    
 <?php endforeach; ?>
