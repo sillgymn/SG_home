@@ -24,6 +24,7 @@
  * @ingroup views_templates
  */
 ?>
+
 <?php foreach ($fields as $id => $field) : ?>
   
   <?php if (!empty($field->separator)) : ?>
@@ -39,7 +40,7 @@
   <?php foreach ($field->handler->view->result as $zxc => $asd) : ?>
   <?php if ($asd->nid == $field->raw) : ?>
   
-  <?php dpm($endTime = $asd->field_field_application_submission[0]['raw']['value']);
+  <?php $endTime = $asd->field_field_application_submission[0]['raw']['value'];
   if ($endTime < time()) : ?>
 <b><font color="red">AEGNUD</font></b>
   <?php endif ?>

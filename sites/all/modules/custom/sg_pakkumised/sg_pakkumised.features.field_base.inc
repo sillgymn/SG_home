@@ -44,18 +44,18 @@ function sg_pakkumised_field_default_field_bases() {
       'cache_enabled' => 0,
       'granularity' => array(
         'day' => 'day',
-        'hour' => 0,
-        'minute' => 0,
+        'hour' => 'hour',
+        'minute' => 'minute',
         'month' => 'month',
         'second' => 0,
         'year' => 'year',
       ),
-      'timezone_db' => '',
+      'timezone_db' => 'UTC',
       'todate' => '',
-      'tz_handling' => 'none',
+      'tz_handling' => 'site',
     ),
     'translatable' => 0,
-    'type' => 'datetime',
+    'type' => 'datestamp',
   );
 
   // Exported field_base: 'field_computer_skills'.

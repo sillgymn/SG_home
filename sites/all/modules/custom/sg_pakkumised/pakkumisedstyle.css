@@ -1,27 +1,37 @@
 
-div.view.view-t-pakkumised.view-id-t_pakkumised.view-display-id-page .view-content .views-row{
-  border-top: 2px solid gray;
-  border-left: 2px solid gray;
-  border-right: 2px solid gray;
+div.view.view-t-pakkumised.view-id-t_pakkumised .view-content .views-row{
+  border-top: 2px solid #e2e2e2;
+  border-left: 2px solid #e2e2e2;
+  border-right: 2px solid #e2e2e2;
   padding: 10px;
   padding-top: 2px;
   position: relative; 
 }
-div.view.view-t-pakkumised.view-id-t_pakkumised.view-display-id-page .view-content{
-  border-bottom: 2px solid gray;
+
+div.view.view-t-pakkumised .views-row.views-row-1.views-row-odd.views-row-first{
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 
-div.views-field.views-field-title{
+div.view.view-t-pakkumised.view-id-t_pakkumised .views-row-last{
+  border-bottom: 2px solid #e2e2e2;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+
+
+div.view.view-t-pakkumised .views-field.views-field-title{
 max-width: 300px;
 }
 span.field-content a{
   color: #1982d1;
 }
-div.views-field.views-field-field-application-submission{ 
+div.view.view-t-pakkumised .views-field.views-field-field-application-submission{ 
 max-width: 300px;
 }
 
-div.views-field.views-field-field-email-workoffer{
+div.view-id-t_pakkumised .views-field.views-field-field-email-workoffer{
   max-width: 230px;
   height: 40px;
   text-align: left !important;
@@ -30,7 +40,7 @@ div.views-field.views-field-field-email-workoffer{
   right: 10px;
  
 }
-span.views-label.views-label-field-email-workoffer{
+div.view.view-t-pakkumised span.views-label.views-label-field-email-workoffer{
   background: url('close-envelope.png') no-repeat;
   max-width: 30px;
   width: 30px;
@@ -41,7 +51,7 @@ span.views-label.views-label-field-email-workoffer{
   top: 10px;
   right: 10px;
 }
-div.views-field.views-field-field-email-workoffer .field-content{
+div.view.view-t-pakkumised .views-field.views-field-field-email-workoffer .field-content{
   max-width: 300px;
   position: relative;
   padding-left: 55px;
@@ -50,19 +60,19 @@ div.views-field.views-field-field-email-workoffer .field-content{
 
 
 
-div.views-field.views-field-title{
+div.view.view-t-pakkumised .views-field.views-field-title{
  
   text-transform: uppercase;
   font-size: 150% !important;
   font-weight: bold !important;
 }
 
-div.views-field.views-field-field-application-submission{
+div.view.view-t-pakkumised .views-field.views-field-field-application-submission{
   max-width: 500px;
 position: relative;
 top: -7px;
 }
-div.views-field.views-field-field-application-submission .field-content {
+div.view.view-t-pakkumised .views-field.views-field-field-application-submission .field-content {
   position: absolute;
   top: 0px;
   left: 200px;
@@ -70,18 +80,18 @@ div.views-field.views-field-field-application-submission .field-content {
 
 
 
-div.content .field {
+div.view.view-t-pakkumised .content .field {
   margin-bottom: 10px;
 
 }
 
-div.field.field-name-field-our-offer.field-type-text-long.field-label-above .field-items{
+div.view.view-t-pakkumised .field.field-name-field-our-offer.field-type-text-long.field-label-above .field-items{
   padding-bottom: 10px;
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid #e2e2e2;
 }
 
 @media screen and (max-width: 767px)  {
-  div.views-field.views-field-field-email-workoffer{
+  div.view.view-t-pakkumised .views-field.views-field-field-email-workoffer{
     position: relative;
     padding-left: initial;
     text-align: left !important;
@@ -89,7 +99,7 @@ div.field.field-name-field-our-offer.field-type-text-long.field-label-above .fie
 
    
   }
-  span.views-label.views-label-field-email-workoffer{
+  div.view.view-t-pakkumised span.views-label.views-label-field-email-workoffer{
     
     background: url('close-envelope.png') no-repeat;
     
@@ -98,7 +108,7 @@ div.field.field-name-field-our-offer.field-type-text-long.field-label-above .fie
     margin-left: 15px;
  
   }
-  div.views-field.views-field-field-email-workoffer .field-content{
+  div.view.view-t-pakkumised .views-field.views-field-field-email-workoffer .field-content{
     margin-top: 3px;
   padding-bottom: initial;
   padding-left: initial;
@@ -109,7 +119,7 @@ div.field.field-name-field-our-offer.field-type-text-long.field-label-above .fie
     
   }
 
-  div.views-field.views-field-field-application-submission{
+  div.view.view-t-pakkumised .views-field.views-field-field-application-submission{
     max-width: 500px;
   position: relative;
   top: -7px;
