@@ -2137,3 +2137,9 @@ margin : 0 !important;
 .field-name-field-sg-muuseumi-pildid .field-item {
     display: inline-block
 }
+
+
+div.view.view-t-pakkumised .aegnudtxt{
+  color: red;
+  font-weight: bold;
+}

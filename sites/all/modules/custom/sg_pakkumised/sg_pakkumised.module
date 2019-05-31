@@ -1,9 +1,9 @@
 <?php
+
 /**
  * @file
  * Code for the Tööpakkumised feature.
  */
 
 include_once 'sg_pakkumised.features.inc';
-
 
