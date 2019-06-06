@@ -1,0 +1,22 @@
+div.view.view-tootajadaccordion .formrow {
+    max-width: 600px;
+    margin:10px;
+    padding:10px;
+    background:#f9f9f9;
+ }
+
+
+ div.view.view-tootajadaccordion .checklabel {
+   
+    border-radius: 5px !important;
+    display:inline-block;
+    width:150px;
+    border:2px solid gray;
+    border-radius:2px;
+    text-align:center;
+    font-size:1.2rem;
+    color:gray;
+    margin: 20px;
+
+}
+
