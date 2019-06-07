@@ -74,14 +74,15 @@ function impact_theme_preprocess_page(&$vars) {
     $vars['secondary_menu'] = FALSE;
   }
   $view = views_get_page_view();
-  
-     if (!empty($view)) {
-	global $base_path;
-	
-        if (strtolower($view->name) == 'dokumendiregister') {
-         drupal_add_js(drupal_get_path('theme', 'impact_theme') . '/js/docreg.js');
-         }
-       }  
+  if (!empty($view)) {
+    global $base_path;
+    if (strtolower($view->name) == 'dokumendiregister') {
+      drupal_add_js(drupal_get_path('theme', 'impact_theme') . '/js/docreg.js');
+    }
+  }
+  if (module_exists('color')) {
+    _color_page_alter($variables);
+  }
 }
 
 /**
@@ -164,3 +165,34 @@ if (drupal_is_front_page()) {
  // drupal_add_js(drupal_get_path('theme', 'impact_theme') . '/js/jquery.cycle.all.min.js');
   drupal_add_js(drupal_get_path('theme', 'impact_theme') . '/js/slide.js');
 }
+
+
+/**
+ * Implements template_preprocess_html.
+ *
+ * @param mixed $variables
+ *   Variables.
+ */
+function  impact_theme_process_html(&$variables) {
+  // Hook into color.module.
+  if (module_exists('color')) {
+    _color_html_alter($variables);
+  }
+}
+/**
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ */
+/*function  impact_theme_process_page(&$variables) {
+  // Hook into color.module.
+  if (module_exists('color')) {
+    _color_page_alter($variables);
+  }
+}*/
+
+

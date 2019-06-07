@@ -144,6 +144,7 @@ function impact_theme_form_system_theme_settings_alter(&$form, &$form_state) {
     '#default_value' => theme_get_setting('google_plus_url', 'impact_theme'),
     '#description'   => t("Enter your Google Plus URL. Leave blank to hide."),
   );
+
   $form['impact_theme_settings']['socialicon']['vk_url'] =array(
     '#type' => 'textfield',
     '#title' => t('VK Address'),
