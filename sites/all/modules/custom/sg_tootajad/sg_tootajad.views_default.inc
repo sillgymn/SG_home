@@ -42,12 +42,12 @@ function sg_tootajad_views_default_views() {
   $handler->display->display_options['style_options']['columns'] = array(
     'field_foto' => 'field_foto',
     'field_amet' => 'field_amet',
+    'field_subject' => 'field_subject',
     'title' => 'title',
+    'field_tel' => 'field_tel',
     'field_email' => 'field_email',
     'field_hours' => 'field_hours',
-    'field_tel' => 'field_tel',
     'language' => 'language',
-    'nid' => 'nid',
   );
   $handler->display->display_options['style_options']['default'] = '-1';
   $handler->display->display_options['style_options']['info'] = array(
@@ -65,8 +65,22 @@ function sg_tootajad_views_default_views() {
       'separator' => '',
       'empty_column' => 0,
     ),
+    'field_subject' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 1,
+    ),
     'title' => array(
       'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_tel' => array(
+      'sortable' => 0,
       'default_sort_order' => 'asc',
       'align' => '',
       'separator' => '',
@@ -84,21 +98,7 @@ function sg_tootajad_views_default_views() {
       'separator' => '',
       'empty_column' => 0,
     ),
-    'field_tel' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
     'language' => array(
-      'sortable' => 0,
-      'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'nid' => array(
       'sortable' => 0,
       'default_sort_order' => 'asc',
       'align' => '',
@@ -107,13 +107,13 @@ function sg_tootajad_views_default_views() {
     ),
   );
   $handler->display->display_options['style_options']['sticky'] = TRUE;
-  /* Päis: Globaalne: Unfiltered text */
+  /* Header: Global: Unfiltered text */
   $handler->display->display_options['header']['area_text_custom']['id'] = 'area_text_custom';
   $handler->display->display_options['header']['area_text_custom']['table'] = 'views';
   $handler->display->display_options['header']['area_text_custom']['field'] = 'area_text_custom';
   $handler->display->display_options['header']['area_text_custom']['empty'] = TRUE;
   $handler->display->display_options['header']['area_text_custom']['content'] = '<p></p>';
-  /* Väli: Sisu: foto */
+  /* Field: Content: foto */
   $handler->display->display_options['fields']['field_foto']['id'] = 'field_foto';
   $handler->display->display_options['fields']['field_foto']['table'] = 'field_data_field_foto';
   $handler->display->display_options['fields']['field_foto']['field'] = 'field_foto';
@@ -131,7 +131,7 @@ function sg_tootajad_views_default_views() {
     'colorbox_caption' => 'auto',
     'colorbox_caption_custom' => '',
   );
-  /* Väli: Sisu: amet */
+  /* Field: Content: amet */
   $handler->display->display_options['fields']['field_amet']['id'] = 'field_amet';
   $handler->display->display_options['fields']['field_amet']['table'] = 'field_data_field_amet';
   $handler->display->display_options['fields']['field_amet']['field'] = 'field_amet';
@@ -139,7 +139,7 @@ function sg_tootajad_views_default_views() {
   $handler->display->display_options['fields']['field_amet']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_amet']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_amet']['element_default_classes'] = FALSE;
-  /* Väli: Sisu: Pealkiri */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -150,14 +150,14 @@ function sg_tootajad_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
-  /* Väli: Sisu: tel */
+  /* Field: Content: tel */
   $handler->display->display_options['fields']['field_tel']['id'] = 'field_tel';
   $handler->display->display_options['fields']['field_tel']['table'] = 'field_data_field_tel';
   $handler->display->display_options['fields']['field_tel']['field'] = 'field_tel';
   $handler->display->display_options['fields']['field_tel']['label'] = '';
   $handler->display->display_options['fields']['field_tel']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_tel']['element_label_colon'] = FALSE;
-  /* Väli: Sisu: email */
+  /* Field: Content: email */
   $handler->display->display_options['fields']['field_email']['id'] = 'field_email';
   $handler->display->display_options['fields']['field_email']['table'] = 'field_data_field_email';
   $handler->display->display_options['fields']['field_email']['field'] = 'field_email';
@@ -166,40 +166,40 @@ function sg_tootajad_views_default_views() {
   $handler->display->display_options['fields']['field_email']['alter']['text'] = '<a href="mailto:[field_email]">[field_email]</a>';
   $handler->display->display_options['fields']['field_email']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_email']['delta_offset'] = '0';
-  /* Väli: Sisu: vastuvõttuaeg */
+  /* Field: Content: vastuvõttuaeg */
   $handler->display->display_options['fields']['field_hours']['id'] = 'field_hours';
   $handler->display->display_options['fields']['field_hours']['table'] = 'field_data_field_hours';
   $handler->display->display_options['fields']['field_hours']['field'] = 'field_hours';
   $handler->display->display_options['fields']['field_hours']['label'] = 'Vastuvõttuaeg';
   $handler->display->display_options['fields']['field_hours']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_hours']['element_label_colon'] = FALSE;
-  /* Väli: Sisu: Keel */
+  /* Field: Content: Language */
   $handler->display->display_options['fields']['language']['id'] = 'language';
   $handler->display->display_options['fields']['language']['table'] = 'node';
   $handler->display->display_options['fields']['language']['field'] = 'language';
   $handler->display->display_options['fields']['language']['label'] = '';
   $handler->display->display_options['fields']['language']['exclude'] = TRUE;
   $handler->display->display_options['fields']['language']['element_label_colon'] = FALSE;
-  /* Väli: Sisu: Õppeaine õpetaja */
+  /* Field: Content: Õppeaine õpetaja */
   $handler->display->display_options['fields']['field_subject']['id'] = 'field_subject';
   $handler->display->display_options['fields']['field_subject']['table'] = 'field_data_field_subject';
   $handler->display->display_options['fields']['field_subject']['field'] = 'field_subject';
   $handler->display->display_options['fields']['field_subject']['exclude'] = TRUE;
-  /* Filtri kriteeriumid: Sisu: Avaldatud */
+  /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filtri kriteeriumid: Sisu: Liik */
+  /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'worker' => 'worker',
   );
-  /* Filtri kriteeriumid: Sisu: Keel */
+  /* Filter criterion: Content: Language */
   $handler->display->display_options['filters']['language']['id'] = 'language';
   $handler->display->display_options['filters']['language']['table'] = 'node';
   $handler->display->display_options['filters']['language']['field'] = 'language';
@@ -212,11 +212,12 @@ function sg_tootajad_views_default_views() {
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Juhtkond ja spetsialistid';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Väli: Sisu: foto */
+  /* Field: Content: foto */
   $handler->display->display_options['fields']['field_foto']['id'] = 'field_foto';
   $handler->display->display_options['fields']['field_foto']['table'] = 'field_data_field_foto';
   $handler->display->display_options['fields']['field_foto']['field'] = 'field_foto';
   $handler->display->display_options['fields']['field_foto']['label'] = '';
+  $handler->display->display_options['fields']['field_foto']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_foto']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_foto']['empty'] = '<div id="no_photo">&nbsp;</div>';
   $handler->display->display_options['fields']['field_foto']['hide_empty'] = TRUE;
@@ -232,7 +233,7 @@ function sg_tootajad_views_default_views() {
     'colorbox_caption' => 'auto',
     'colorbox_caption_custom' => '',
   );
-  /* Väli: Sisu: amet */
+  /* Field: Content: amet */
   $handler->display->display_options['fields']['field_amet']['id'] = 'field_amet';
   $handler->display->display_options['fields']['field_amet']['table'] = 'field_data_field_amet';
   $handler->display->display_options['fields']['field_amet']['field'] = 'field_amet';
@@ -240,7 +241,7 @@ function sg_tootajad_views_default_views() {
   $handler->display->display_options['fields']['field_amet']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_amet']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_amet']['element_default_classes'] = FALSE;
-  /* Väli: Sisu: Pealkiri */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -251,7 +252,7 @@ function sg_tootajad_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
-  /* Väli: Sisu: email */
+  /* Field: Content: email */
   $handler->display->display_options['fields']['field_email']['id'] = 'field_email';
   $handler->display->display_options['fields']['field_email']['table'] = 'field_data_field_email';
   $handler->display->display_options['fields']['field_email']['field'] = 'field_email';
@@ -266,18 +267,18 @@ function sg_tootajad_views_default_views() {
   $handler->display->display_options['fields']['field_email']['empty_zero'] = TRUE;
   $handler->display->display_options['fields']['field_email']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_email']['separator'] = '';
-  /* Väli: Sisu: vastuvõttuaeg */
+  /* Field: Content: vastuvõttuaeg */
   $handler->display->display_options['fields']['field_hours']['id'] = 'field_hours';
   $handler->display->display_options['fields']['field_hours']['table'] = 'field_data_field_hours';
   $handler->display->display_options['fields']['field_hours']['field'] = 'field_hours';
   $handler->display->display_options['fields']['field_hours']['label'] = 'Vastuvõttuaeg';
   $handler->display->display_options['fields']['field_hours']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_hours']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_hours']['alter']['text'] = '<b>Vastuvõttuaeg:</b><br>[field_hours]';
+  $handler->display->display_options['fields']['field_hours']['alter']['text'] = '<b>Vastuvõtuaeg:</b><br>[field_hours]';
   $handler->display->display_options['fields']['field_hours']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_hours']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_hours']['empty_zero'] = TRUE;
-  /* Väli: Sisu: tel */
+  /* Field: Content: tel */
   $handler->display->display_options['fields']['field_tel']['id'] = 'field_tel';
   $handler->display->display_options['fields']['field_tel']['table'] = 'field_data_field_tel';
   $handler->display->display_options['fields']['field_tel']['field'] = 'field_tel';
@@ -288,14 +289,14 @@ function sg_tootajad_views_default_views() {
   $handler->display->display_options['fields']['field_tel']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_tel']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_tel']['empty_zero'] = TRUE;
-  /* Väli: Sisu: Keel */
+  /* Field: Content: Language */
   $handler->display->display_options['fields']['language']['id'] = 'language';
   $handler->display->display_options['fields']['language']['table'] = 'node';
   $handler->display->display_options['fields']['language']['field'] = 'language';
   $handler->display->display_options['fields']['language']['label'] = '';
   $handler->display->display_options['fields']['language']['exclude'] = TRUE;
   $handler->display->display_options['fields']['language']['element_label_colon'] = FALSE;
-  /* Väli: Sisu: Nid */
+  /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
@@ -303,51 +304,56 @@ function sg_tootajad_views_default_views() {
   $handler->display->display_options['fields']['nid']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['nid']['alter']['text'] = '[field_tel][field_email][field_hours]';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Lühike kriteerium: Sisu: kaal (field_weight) */
+  /* Sort criterion: Content: kaal (field_weight) */
   $handler->display->display_options['sorts']['field_weight_value']['id'] = 'field_weight_value';
   $handler->display->display_options['sorts']['field_weight_value']['table'] = 'field_data_field_weight';
   $handler->display->display_options['sorts']['field_weight_value']['field'] = 'field_weight_value';
   $handler->display->display_options['sorts']['field_weight_value']['order'] = 'DESC';
+  /* Sort criterion: Content revision: Title */
+  $handler->display->display_options['sorts']['title']['id'] = 'title';
+  $handler->display->display_options['sorts']['title']['table'] = 'node_revision';
+  $handler->display->display_options['sorts']['title']['field'] = 'title';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filtri kriteeriumid: Sisu: Avaldatud */
+  /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filtri kriteeriumid: Sisu: Liik */
+  /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'worker' => 'worker',
   );
-  /* Filtri kriteeriumid: Sisu: Keel */
+  /* Filter criterion: Content: Language */
   $handler->display->display_options['filters']['language']['id'] = 'language';
   $handler->display->display_options['filters']['language']['table'] = 'node';
   $handler->display->display_options['filters']['language']['field'] = 'language';
   $handler->display->display_options['filters']['language']['value'] = array(
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
-  /* Filtri kriteeriumid: Sisu: Spetsialist (field_spetsialist) */
+  /* Filter criterion: Content: Spetsialist (field_spetsialist) */
   $handler->display->display_options['filters']['field_spetsialist_value']['id'] = 'field_spetsialist_value';
   $handler->display->display_options['filters']['field_spetsialist_value']['table'] = 'field_data_field_spetsialist';
   $handler->display->display_options['filters']['field_spetsialist_value']['field'] = 'field_spetsialist_value';
   $handler->display->display_options['filters']['field_spetsialist_value']['value'] = array(
     1 => '1',
   );
-  $handler->display->display_options['path'] = 'spetsialistid';
+  $handler->display->display_options['path'] = 'juhtkond_spetsialistid';
 
   /* Display: Õpetajad */
   $handler = $view->new_display('page', 'Õpetajad', 'page_1');
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Väli: Sisu: foto */
+  /* Field: Content: foto */
   $handler->display->display_options['fields']['field_foto']['id'] = 'field_foto';
   $handler->display->display_options['fields']['field_foto']['table'] = 'field_data_field_foto';
   $handler->display->display_options['fields']['field_foto']['field'] = 'field_foto';
   $handler->display->display_options['fields']['field_foto']['label'] = '';
+  $handler->display->display_options['fields']['field_foto']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_foto']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_foto']['empty'] = '<div id="no_photo">&nbsp;</div>';
   $handler->display->display_options['fields']['field_foto']['empty_zero'] = TRUE;
@@ -355,13 +361,14 @@ function sg_tootajad_views_default_views() {
   $handler->display->display_options['fields']['field_foto']['type'] = 'colorbox';
   $handler->display->display_options['fields']['field_foto']['settings'] = array(
     'colorbox_node_style' => 'photod',
+    'colorbox_node_style_first' => '',
     'colorbox_image_style' => '',
     'colorbox_gallery' => 'post',
     'colorbox_gallery_custom' => '',
     'colorbox_caption' => 'auto',
     'colorbox_caption_custom' => '',
   );
-  /* Väli: Sisu: amet */
+  /* Field: Content: amet */
   $handler->display->display_options['fields']['field_amet']['id'] = 'field_amet';
   $handler->display->display_options['fields']['field_amet']['table'] = 'field_data_field_amet';
   $handler->display->display_options['fields']['field_amet']['field'] = 'field_amet';
@@ -369,30 +376,30 @@ function sg_tootajad_views_default_views() {
   $handler->display->display_options['fields']['field_amet']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_amet']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_amet']['element_default_classes'] = FALSE;
-  /* Väli: Sisu: Õppeaine õpetaja */
+  /* Field: Content: Õppeaine õpetaja */
   $handler->display->display_options['fields']['field_subject']['id'] = 'field_subject';
   $handler->display->display_options['fields']['field_subject']['table'] = 'field_data_field_subject';
   $handler->display->display_options['fields']['field_subject']['field'] = 'field_subject';
   $handler->display->display_options['fields']['field_subject']['exclude'] = TRUE;
-  /* Väli: Sisu: Pealkiri */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = 'Ees - ja perekonnanimi';
   $handler->display->display_options['fields']['title']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['title']['alter']['text'] = '[title]<br>Õpeaine: [field_subject]<br> [field_amet]';
+  $handler->display->display_options['fields']['title']['alter']['text'] = '<strong>[title]</strong><br>Õppeaine: [field_subject]<br> [field_amet]';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
-  /* Väli: Sisu: tel */
+  /* Field: Content: tel */
   $handler->display->display_options['fields']['field_tel']['id'] = 'field_tel';
   $handler->display->display_options['fields']['field_tel']['table'] = 'field_data_field_tel';
   $handler->display->display_options['fields']['field_tel']['field'] = 'field_tel';
   $handler->display->display_options['fields']['field_tel']['label'] = '';
   $handler->display->display_options['fields']['field_tel']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_tel']['element_label_colon'] = FALSE;
-  /* Väli: Sisu: email */
+  /* Field: Content: email */
   $handler->display->display_options['fields']['field_email']['id'] = 'field_email';
   $handler->display->display_options['fields']['field_email']['table'] = 'field_data_field_email';
   $handler->display->display_options['fields']['field_email']['field'] = 'field_email';
@@ -401,14 +408,14 @@ function sg_tootajad_views_default_views() {
   $handler->display->display_options['fields']['field_email']['alter']['text'] = '<a href="mailto:[field_email]">[field_email]</a>';
   $handler->display->display_options['fields']['field_email']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_email']['delta_offset'] = '0';
-  /* Väli: Sisu: vastuvõttuaeg */
+  /* Field: Content: vastuvõttuaeg */
   $handler->display->display_options['fields']['field_hours']['id'] = 'field_hours';
   $handler->display->display_options['fields']['field_hours']['table'] = 'field_data_field_hours';
   $handler->display->display_options['fields']['field_hours']['field'] = 'field_hours';
   $handler->display->display_options['fields']['field_hours']['label'] = 'Vastuvõttuaeg';
   $handler->display->display_options['fields']['field_hours']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_hours']['element_label_colon'] = FALSE;
-  /* Väli: Sisu: Keel */
+  /* Field: Content: Language */
   $handler->display->display_options['fields']['language']['id'] = 'language';
   $handler->display->display_options['fields']['language']['table'] = 'node';
   $handler->display->display_options['fields']['language']['field'] = 'language';
@@ -416,41 +423,41 @@ function sg_tootajad_views_default_views() {
   $handler->display->display_options['fields']['language']['exclude'] = TRUE;
   $handler->display->display_options['fields']['language']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Lühike kriteerium: Sisu: Pealkiri */
+  /* Sort criterion: Content: Title */
   $handler->display->display_options['sorts']['title']['id'] = 'title';
   $handler->display->display_options['sorts']['title']['table'] = 'node';
   $handler->display->display_options['sorts']['title']['field'] = 'title';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filtri kriteeriumid: Sisu: Avaldatud */
+  /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filtri kriteeriumid: Sisu: Liik */
+  /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'worker' => 'worker',
   );
-  /* Filtri kriteeriumid: Sisu: Keel */
+  /* Filter criterion: Content: Language */
   $handler->display->display_options['filters']['language']['id'] = 'language';
   $handler->display->display_options['filters']['language']['table'] = 'node';
   $handler->display->display_options['filters']['language']['field'] = 'language';
   $handler->display->display_options['filters']['language']['value'] = array(
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
-  /* Filtri kriteeriumid: Sisu: Õpetaja (field_teacher) */
+  /* Filter criterion: Content: Õpetaja (field_teacher) */
   $handler->display->display_options['filters']['field_teacher_value']['id'] = 'field_teacher_value';
   $handler->display->display_options['filters']['field_teacher_value']['table'] = 'field_data_field_teacher';
   $handler->display->display_options['filters']['field_teacher_value']['field'] = 'field_teacher_value';
   $handler->display->display_options['filters']['field_teacher_value']['value'] = array(
     1 => '1',
   );
-  $handler->display->display_options['path'] = 'teacher';
+  $handler->display->display_options['path'] = 'opetajad';
   $translatables['specialist'] = array(
     t('Master'),
     t('Õpetajad'),
@@ -471,10 +478,10 @@ function sg_tootajad_views_default_views() {
     t('Spetsialistid'),
     t('Juhtkond ja spetsialistid'),
     t('<a href="mailto:[field_email]">[field_email]</a></br>'),
-    t('<b>Vastuvõttuaeg:</b><br>[field_hours]'),
+    t('<b>Vastuvõtuaeg:</b><br>[field_hours]'),
     t('tel:[field_tel] &nbsp;</br>'),
     t('[field_tel][field_email][field_hours]'),
-    t('[title]<br>Õpeaine: [field_subject]<br> [field_amet]'),
+    t('<strong>[title]</strong><br>Õppeaine: [field_subject]<br> [field_amet]'),
   );
   $export['specialist'] = $view;
 

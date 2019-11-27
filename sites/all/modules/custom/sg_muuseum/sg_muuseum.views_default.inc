@@ -22,7 +22,7 @@ function sg_muuseum_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Kooli muuseum';
+  $handler->display->display_options['title'] = 'Gümnaasiumi muuseum';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['use_more_text'] = 'veel';
   $handler->display->display_options['access']['type'] = 'perm';
@@ -50,7 +50,7 @@ function sg_muuseum_views_default_views() {
     'title' => 'title',
   );
   $handler->display->display_options['row_options']['hide_empty'] = TRUE;
-  /* Väli: Sisu: Pildid */
+  /* Field: Content: Pildid */
   $handler->display->display_options['fields']['field_sg_muuseumi_pildid']['id'] = 'field_sg_muuseumi_pildid';
   $handler->display->display_options['fields']['field_sg_muuseumi_pildid']['table'] = 'field_data_field_sg_muuseumi_pildid';
   $handler->display->display_options['fields']['field_sg_muuseumi_pildid']['field'] = 'field_sg_muuseumi_pildid';
@@ -62,8 +62,8 @@ function sg_muuseum_views_default_views() {
     'image_link' => 'content',
   );
   $handler->display->display_options['fields']['field_sg_muuseumi_pildid']['delta_limit'] = '1';
-  $handler->display->display_options['fields']['field_sg_muuseumi_pildid']['delta_offset'] = '1';
-  /* Väli: Sisu: Pealkiri */
+  $handler->display->display_options['fields']['field_sg_muuseumi_pildid']['delta_offset'] = '';
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -72,26 +72,26 @@ function sg_muuseum_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_type'] = 'h2';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Lühike kriteerium: Sisu: Postituse kuupäev */
+  /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Filtri kriteeriumid: Sisu: Avaldatud */
+  /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filtri kriteeriumid: Sisu: Liik */
+  /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'sg_muuseumi_artikkel' => 'sg_muuseumi_artikkel',
   );
-  /* Filtri kriteeriumid: Sisu: Keel */
+  /* Filter criterion: Content: Language */
   $handler->display->display_options['filters']['language']['id'] = 'language';
   $handler->display->display_options['filters']['language']['table'] = 'node';
   $handler->display->display_options['filters']['language']['field'] = 'language';
@@ -104,7 +104,7 @@ function sg_muuseum_views_default_views() {
   $handler->display->display_options['path'] = 'sg-muuseum';
   $translatables['sg_muuseum'] = array(
     t('Master'),
-    t('Kooli muuseum'),
+    t('Gümnaasiumi muuseum'),
     t('veel'),
     t('Rakenda'),
     t('Lähtesta'),

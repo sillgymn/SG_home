@@ -38,7 +38,7 @@ function sg_basic_content_types_node_info() {
       'base' => 'node_content',
       'description' => '',
       'has_title' => '1',
-      'title_label' => t('Title'),
+      'title_label' => t('Pealkiri'),
       'help' => '',
     ),
     'document_folder' => array(
@@ -46,7 +46,7 @@ function sg_basic_content_types_node_info() {
       'base' => 'node_content',
       'description' => t('Dokumendiregisteri folder'),
       'has_title' => '1',
-      'title_label' => t('Title'),
+      'title_label' => t('Pealkiri'),
       'help' => '',
     ),
     'filelist' => array(
@@ -54,7 +54,7 @@ function sg_basic_content_types_node_info() {
       'base' => 'node_content',
       'description' => t('список фалйов'),
       'has_title' => '1',
-      'title_label' => t('Title'),
+      'title_label' => t('Pealkiri'),
       'help' => '',
     ),
     'footer_logo' => array(
@@ -62,7 +62,7 @@ function sg_basic_content_types_node_info() {
       'base' => 'node_content',
       'description' => '',
       'has_title' => '1',
-      'title_label' => t('Title'),
+      'title_label' => t('Pealkiri'),
       'help' => '',
     ),
     'image_gallery' => array(
@@ -70,7 +70,7 @@ function sg_basic_content_types_node_info() {
       'base' => 'node_content',
       'description' => '',
       'has_title' => '1',
-      'title_label' => t('Image gallery'),
+      'title_label' => t('Galerii'),
       'help' => '',
     ),
     'news' => array(
@@ -82,11 +82,11 @@ function sg_basic_content_types_node_info() {
       'help' => '',
     ),
     'page' => array(
-      'name' => t('Basic page'),
+      'name' => t('Lihtlehekülg'),
       'base' => 'node_content',
-      'description' => t('Use <em>basic pages</em> for your static content, such as an \'About us\' page.'),
+      'description' => t('<em>Lihtlehti</em> võib kasutada muutumatu sisu jaoks, nagu näiteks leht \'Meist lähemalt\'.'),
       'has_title' => '1',
-      'title_label' => t('Title'),
+      'title_label' => t('Pealkiri'),
       'help' => '',
     ),
     'projektid' => array(
@@ -110,7 +110,7 @@ function sg_basic_content_types_node_info() {
       'base' => 'node_content',
       'description' => '',
       'has_title' => '1',
-      'title_label' => t('Title'),
+      'title_label' => t('Pealkiri'),
       'help' => '',
     ),
     'slider_image' => array(

@@ -94,6 +94,7 @@ features[views_view][] = dokumendiregister
 features[views_view][] = footer_logos
 features[views_view][] = image_gallery
 features[views_view][] = image_gallery2
+features[views_view][] = karjaariinfo_page
 features[views_view][] = news
 features[views_view][] = right_sidepane_logod
 features[views_view][] = slider

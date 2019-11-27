@@ -41,7 +41,7 @@ function sg_basic_content_types_views_default_views() {
     'nothing' => 'nothing',
   );
   $handler->display->display_options['row_options']['separator'] = '<br>';
-  /* Väli: Sisu: Pealkiri */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -53,7 +53,7 @@ function sg_basic_content_types_views_default_views() {
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
-  /* Väli: Sisu: Image */
+  /* Field: Content: Image */
   $handler->display->display_options['fields']['field_footer_logo_image']['id'] = 'field_footer_logo_image';
   $handler->display->display_options['fields']['field_footer_logo_image']['table'] = 'field_data_field_footer_logo_image';
   $handler->display->display_options['fields']['field_footer_logo_image']['field'] = 'field_footer_logo_image';
@@ -67,14 +67,14 @@ function sg_basic_content_types_views_default_views() {
     'image_style' => '',
     'image_link' => '',
   );
-  /* Väli: Sisu: Link */
+  /* Field: Content: Link */
   $handler->display->display_options['fields']['field_footer_logo_link']['id'] = 'field_footer_logo_link';
   $handler->display->display_options['fields']['field_footer_logo_link']['table'] = 'field_data_field_footer_logo_link';
   $handler->display->display_options['fields']['field_footer_logo_link']['field'] = 'field_footer_logo_link';
   $handler->display->display_options['fields']['field_footer_logo_link']['label'] = '';
   $handler->display->display_options['fields']['field_footer_logo_link']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_footer_logo_link']['element_label_colon'] = FALSE;
-  /* Väli: Globaalne: Kohandatud tekst */
+  /* Field: Global: Custom text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
@@ -83,21 +83,21 @@ function sg_basic_content_types_views_default_views() {
   $handler->display->display_options['fields']['nothing']['element_type'] = 'div';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing']['element_wrapper_type'] = 'div';
-  /* Filtri kriteeriumid: Sisu: Avaldatud */
+  /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filtri kriteeriumid: Sisu: Liik */
+  /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'projektid' => 'projektid',
   );
-  /* Filtri kriteeriumid: Sisu: Projekt periood (field_project_periood:value2) */
+  /* Filter criterion: Content: Projekt periood (field_project_periood:value2) */
   $handler->display->display_options['filters']['field_project_periood_value2']['id'] = 'field_project_periood_value2';
   $handler->display->display_options['filters']['field_project_periood_value2']['table'] = 'field_data_field_project_periood';
   $handler->display->display_options['filters']['field_project_periood_value2']['field'] = 'field_project_periood_value2';
@@ -119,6 +119,7 @@ function sg_basic_content_types_views_default_views() {
     t('<p align="center">[field_footer_logo_image] </p>'),
     t('<a href=\'[field_footer_logo_link]\' target="_blank" alt=\'[title]\' title=\'[title]\'>[field_footer_logo_image]</a>'),
     t('Block'),
+    t('more'),
   );
   $export['SG_projrktid'] = $view;
 
@@ -149,21 +150,21 @@ function sg_basic_content_types_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Väli: Sisu: Pealkiri */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Filtri kriteeriumid: Sisu: Avaldatud */
+  /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filtri kriteeriumid: Sisu: Liik */
+  /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -183,6 +184,7 @@ function sg_basic_content_types_views_default_views() {
     t('Kasvav'),
     t('Kahanev'),
     t('Block'),
+    t('more'),
   );
   $export['banners'] = $view;
 
@@ -221,7 +223,7 @@ function sg_basic_content_types_views_default_views() {
   $handler->display->display_options['pager']['options']['tags']['last'] = 'viimane »';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Jalus: Globaalne: PHP */
+  /* Footer: Global: PHP */
   $handler->display->display_options['footer']['php']['id'] = 'php';
   $handler->display->display_options['footer']['php']['table'] = 'views';
   $handler->display->display_options['footer']['php']['field'] = 'php';
@@ -230,12 +232,12 @@ if (user_access(\'create document_folder content\'))
 print "<a class=\' button\'  href=\'node/add/document-folder\'> Lisa  </a>";
 ?>
 ';
-  /* Väli: Sisu: Nid */
+  /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
   $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
-  /* Väli: Sisu: Pealkiri */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -246,7 +248,7 @@ print "<a class=\' button\'  href=\'node/add/document-folder\'> Lisa  </a>";
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
-  /* Väli: Sisu: file */
+  /* Field: Content: file */
   $handler->display->display_options['fields']['field_docregister_file']['id'] = 'field_docregister_file';
   $handler->display->display_options['fields']['field_docregister_file']['table'] = 'field_data_field_docregister_file';
   $handler->display->display_options['fields']['field_docregister_file']['field'] = 'field_docregister_file';
@@ -255,7 +257,7 @@ print "<a class=\' button\'  href=\'node/add/document-folder\'> Lisa  </a>";
   $handler->display->display_options['fields']['field_docregister_file']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_docregister_file']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_docregister_file']['multi_type'] = 'ul';
-  /* Väli: Globaalne: PHP */
+  /* Field: Global: PHP */
   $handler->display->display_options['fields']['php']['id'] = 'php';
   $handler->display->display_options['fields']['php']['table'] = 'views';
   $handler->display->display_options['fields']['php']['field'] = 'php';
@@ -268,25 +270,25 @@ if (user_access("edit any document_folder content"))
 print "<div><a class=\' button\'  href=\'/node/{$row->nid}/edit?destination=dokumendiregister\'> Edit </a></div>";?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
-  /* Lühike kriteerium: Sisu: Järjekord (field_docregister_position) */
+  /* Sort criterion: Content: Järjekord (field_docregister_position) */
   $handler->display->display_options['sorts']['field_docregister_position_value']['id'] = 'field_docregister_position_value';
   $handler->display->display_options['sorts']['field_docregister_position_value']['table'] = 'field_data_field_docregister_position';
   $handler->display->display_options['sorts']['field_docregister_position_value']['field'] = 'field_docregister_position_value';
-  /* Filtri kriteeriumid: Sisu: Avaldatud */
+  /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filtri kriteeriumid: Sisu: Liik */
+  /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'document_folder' => 'document_folder',
   );
-  /* Filtri kriteeriumid: Sisu: Tüüp (field_docregister_rype) */
+  /* Filter criterion: Content: Tüüp (field_docregister_rype) */
   $handler->display->display_options['filters']['field_docregister_rype_value']['id'] = 'field_docregister_rype_value';
   $handler->display->display_options['filters']['field_docregister_rype_value']['table'] = 'field_data_field_docregister_rype';
   $handler->display->display_options['filters']['field_docregister_rype_value']['field'] = 'field_docregister_rype_value';
@@ -300,21 +302,21 @@ print "<div><a class=\' button\'  href=\'/node/{$row->nid}/edit?destination=doku
   $handler->display->display_options['title'] = 'Dokumendid';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filtri kriteeriumid: Sisu: Avaldatud */
+  /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filtri kriteeriumid: Sisu: Liik */
+  /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'document_folder' => 'document_folder',
   );
-  /* Filtri kriteeriumid: Sisu: Tüüp (field_docregister_rype) */
+  /* Filter criterion: Content: Tüüp (field_docregister_rype) */
   $handler->display->display_options['filters']['field_docregister_rype_value']['id'] = 'field_docregister_rype_value';
   $handler->display->display_options['filters']['field_docregister_rype_value']['table'] = 'field_data_field_docregister_rype';
   $handler->display->display_options['filters']['field_docregister_rype_value']['field'] = 'field_docregister_rype_value';
@@ -346,6 +348,7 @@ print "<div><a class=\' button\'  href=\'/node/{$row->nid}/edit?destination=doku
     t('<a  id="docreg-title" href="" ><span class="docreg-arrow-down">&nbsp;</span><span class="docreg-arrow-up">&nbsp;</span><h3 class=docreg-title>[title]</h3></a>'),
     t('Document'),
     t('Dokumendid'),
+    t('more'),
   );
   $export['dokumendiregister'] = $view;
 
@@ -375,7 +378,7 @@ print "<div><a class=\' button\'  href=\'/node/{$row->nid}/edit?destination=doku
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['style_plugin'] = 'list';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Väli: Sisu: Pealkiri */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -385,7 +388,7 @@ print "<div><a class=\' button\'  href=\'/node/{$row->nid}/edit?destination=doku
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
-  /* Väli: Sisu: Image */
+  /* Field: Content: Image */
   $handler->display->display_options['fields']['field_footer_logo_image']['id'] = 'field_footer_logo_image';
   $handler->display->display_options['fields']['field_footer_logo_image']['table'] = 'field_data_field_footer_logo_image';
   $handler->display->display_options['fields']['field_footer_logo_image']['field'] = 'field_footer_logo_image';
@@ -397,28 +400,28 @@ print "<div><a class=\' button\'  href=\'/node/{$row->nid}/edit?destination=doku
     'image_style' => '',
     'image_link' => '',
   );
-  /* Väli: Sisu: Link */
+  /* Field: Content: Link */
   $handler->display->display_options['fields']['field_footer_logo_link']['id'] = 'field_footer_logo_link';
   $handler->display->display_options['fields']['field_footer_logo_link']['table'] = 'field_data_field_footer_logo_link';
   $handler->display->display_options['fields']['field_footer_logo_link']['field'] = 'field_footer_logo_link';
   $handler->display->display_options['fields']['field_footer_logo_link']['label'] = '';
   $handler->display->display_options['fields']['field_footer_logo_link']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_footer_logo_link']['element_label_colon'] = FALSE;
-  /* Väli: Globaalne: Kohandatud tekst */
+  /* Field: Global: Custom text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<a href=\'[field_footer_logo_link]\' target="_blank" alt=\'[title]\' title=\'[title]\'>[field_footer_logo_image]</a>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
-  /* Filtri kriteeriumid: Sisu: Avaldatud */
+  /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filtri kriteeriumid: Sisu: Liik */
+  /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -438,6 +441,7 @@ print "<div><a class=\' button\'  href=\'/node/{$row->nid}/edit?destination=doku
     t('Kahanev'),
     t('<a href=\'[field_footer_logo_link]\' target="_blank" alt=\'[title]\' title=\'[title]\'>[field_footer_logo_image]</a>'),
     t('Block'),
+    t('more'),
   );
   $export['footer_logos'] = $view;
 
@@ -477,14 +481,14 @@ print "<div><a class=\' button\'  href=\'/node/{$row->nid}/edit?destination=doku
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Jalus: Globaalne: Tekstiala */
+  /* Footer: Global: Text area */
   $handler->display->display_options['footer']['area']['id'] = 'area';
   $handler->display->display_options['footer']['area']['table'] = 'views';
   $handler->display->display_options['footer']['area']['field'] = 'area';
   $handler->display->display_options['footer']['area']['label'] = 'archive link';
   $handler->display->display_options['footer']['area']['content'] = '<a href=\'/et/image-gallery-archive/\'><strong>Pildigalerii arhiiv >></a>';
   $handler->display->display_options['footer']['area']['format'] = 'full_html';
-  /* Väli: Sisu: photo */
+  /* Field: Content: photo */
   $handler->display->display_options['fields']['field_photos']['id'] = 'field_photos';
   $handler->display->display_options['fields']['field_photos']['table'] = 'field_data_field_photos';
   $handler->display->display_options['fields']['field_photos']['field'] = 'field_photos';
@@ -498,7 +502,7 @@ print "<div><a class=\' button\'  href=\'/node/{$row->nid}/edit?destination=doku
   );
   $handler->display->display_options['fields']['field_photos']['delta_limit'] = '1';
   $handler->display->display_options['fields']['field_photos']['delta_offset'] = '0';
-  /* Väli: Sisu: Pealkiri */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -508,33 +512,33 @@ print "<div><a class=\' button\'  href=\'/node/{$row->nid}/edit?destination=doku
   $handler->display->display_options['fields']['title']['element_type'] = 'h3';
   $handler->display->display_options['fields']['title']['element_class'] = 'content-title';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Lühike kriteerium: Sisu: Postituse kuupäev */
+  /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Filtri kriteeriumid: Sisu: Avaldatud */
+  /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filtri kriteeriumid: Sisu: Liik */
+  /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'image_gallery' => 'image_gallery',
   );
-  /* Filtri kriteeriumid: Sisu: Keel */
+  /* Filter criterion: Content: Language */
   $handler->display->display_options['filters']['language']['id'] = 'language';
   $handler->display->display_options['filters']['language']['table'] = 'node';
   $handler->display->display_options['filters']['language']['field'] = 'language';
   $handler->display->display_options['filters']['language']['value'] = array(
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
-  /* Filtri kriteeriumid: Sisu: Õppeaasta (field_year) */
+  /* Filter criterion: Content: Õppeaasta (field_year) */
   $handler->display->display_options['filters']['field_year_value']['id'] = 'field_year_value';
   $handler->display->display_options['filters']['field_year_value']['table'] = 'field_data_field_year';
   $handler->display->display_options['filters']['field_year_value']['field'] = 'field_year_value';
@@ -564,6 +568,7 @@ print "<div><a class=\' button\'  href=\'/node/{$row->nid}/edit?destination=doku
     t('archive link'),
     t('<a href=\'/et/image-gallery-archive/\'><strong>Pildigalerii arhiiv >></a>'),
     t('Page'),
+    t('more'),
   );
   $export['image_gallery'] = $view;
 
@@ -611,7 +616,7 @@ print "<div><a class=\' button\'  href=\'/node/{$row->nid}/edit?destination=doku
   );
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Väli: Sisu: photo */
+  /* Field: Content: photo */
   $handler->display->display_options['fields']['field_photos']['id'] = 'field_photos';
   $handler->display->display_options['fields']['field_photos']['table'] = 'field_data_field_photos';
   $handler->display->display_options['fields']['field_photos']['field'] = 'field_photos';
@@ -625,7 +630,7 @@ print "<div><a class=\' button\'  href=\'/node/{$row->nid}/edit?destination=doku
   );
   $handler->display->display_options['fields']['field_photos']['delta_limit'] = '1';
   $handler->display->display_options['fields']['field_photos']['delta_offset'] = '0';
-  /* Väli: Sisu: Pealkiri */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -635,40 +640,40 @@ print "<div><a class=\' button\'  href=\'/node/{$row->nid}/edit?destination=doku
   $handler->display->display_options['fields']['title']['element_type'] = 'h3';
   $handler->display->display_options['fields']['title']['element_class'] = 'content-title';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Väli: Sisu: Õppeaasta */
+  /* Field: Content: Õppeaasta */
   $handler->display->display_options['fields']['field_year']['id'] = 'field_year';
   $handler->display->display_options['fields']['field_year']['table'] = 'field_data_field_year';
   $handler->display->display_options['fields']['field_year']['field'] = 'field_year';
   $handler->display->display_options['fields']['field_year']['label'] = '';
   $handler->display->display_options['fields']['field_year']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_year']['element_label_colon'] = FALSE;
-  /* Lühike kriteerium: Sisu: Postituse kuupäev */
+  /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Filtri kriteeriumid: Sisu: Avaldatud */
+  /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filtri kriteeriumid: Sisu: Liik */
+  /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'image_gallery' => 'image_gallery',
   );
-  /* Filtri kriteeriumid: Sisu: Keel */
+  /* Filter criterion: Content: Language */
   $handler->display->display_options['filters']['language']['id'] = 'language';
   $handler->display->display_options['filters']['language']['table'] = 'node';
   $handler->display->display_options['filters']['language']['field'] = 'language';
   $handler->display->display_options['filters']['language']['value'] = array(
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
-  /* Filtri kriteeriumid: Sisu: Õppeaasta (field_year) */
+  /* Filter criterion: Content: Õppeaasta (field_year) */
   $handler->display->display_options['filters']['field_year_value']['id'] = 'field_year_value';
   $handler->display->display_options['filters']['field_year_value']['table'] = 'field_data_field_year';
   $handler->display->display_options['filters']['field_year_value']['field'] = 'field_year_value';
@@ -697,6 +702,7 @@ print "<div><a class=\' button\'  href=\'/node/{$row->nid}/edit?destination=doku
     t('järgmine ›'),
     t('viimane »'),
     t('Page'),
+    t('more'),
   );
   $export['image_gallery2'] = $view;
 
@@ -736,33 +742,33 @@ print "<div><a class=\' button\'  href=\'/node/{$row->nid}/edit?destination=doku
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'node';
   $handler->display->display_options['row_options']['links'] = FALSE;
-  /* Väli: Sisu: Pealkiri */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Lühike kriteerium: Sisu: Postituse kuupäev */
+  /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Filtri kriteeriumid: Sisu: Avaldatud */
+  /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filtri kriteeriumid: Sisu: Liik */
+  /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'news' => 'news',
   );
-  /* Filtri kriteeriumid: Sisu: Type (field_uudise_type) */
+  /* Filter criterion: Content: Type (field_uudise_type) */
   $handler->display->display_options['filters']['field_uudise_type_tid']['id'] = 'field_uudise_type_tid';
   $handler->display->display_options['filters']['field_uudise_type_tid']['table'] = 'field_data_field_uudise_type';
   $handler->display->display_options['filters']['field_uudise_type_tid']['field'] = 'field_uudise_type_tid';
@@ -822,40 +828,40 @@ print "<div><a class=\' button\'  href=\'/node/{$row->nid}/edit?destination=doku
   $handler->display->display_options['pager']['options']['items_per_page'] = '5';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Väli: Sisu: Pealkiri */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Väli: Sisu: Postituse kuupäev */
+  /* Field: Content: Post date */
   $handler->display->display_options['fields']['created']['id'] = 'created';
   $handler->display->display_options['fields']['created']['table'] = 'node';
   $handler->display->display_options['fields']['created']['field'] = 'created';
   $handler->display->display_options['fields']['created']['label'] = '';
   $handler->display->display_options['fields']['created']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['created']['date_format'] = 'short';
-  /* Lühike kriteerium: Sisu: Postituse kuupäev */
+  /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Filtri kriteeriumid: Sisu: Avaldatud */
+  /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filtri kriteeriumid: Sisu: Liik */
+  /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'news' => 'news',
   );
-  /* Filtri kriteeriumid: Sisu: Keel */
+  /* Filter criterion: Content: Language */
   $handler->display->display_options['filters']['language']['id'] = 'language';
   $handler->display->display_options['filters']['language']['table'] = 'node';
   $handler->display->display_options['filters']['language']['field'] = 'language';
@@ -867,12 +873,12 @@ print "<div><a class=\' button\'  href=\'/node/{$row->nid}/edit?destination=doku
   $handler = $view->new_display('block', 'Block', 'block');
   $handler->display->display_options['field_language'] = '***DEFAULT_LANGUAGE***';
   $handler->display->display_options['defaults']['footer'] = FALSE;
-  /* Jalus: Globaalne: Tekstiala */
+  /* Footer: Global: Text area */
   $handler->display->display_options['footer']['area']['id'] = 'area';
   $handler->display->display_options['footer']['area']['table'] = 'views';
   $handler->display->display_options['footer']['area']['field'] = 'area';
   $handler->display->display_options['footer']['area']['empty'] = TRUE;
-  $handler->display->display_options['footer']['area']['content'] = '<a href=\'/ru/uudiste-arhiiv/\'>Архив новостей >></a> ';
+  $handler->display->display_options['footer']['area']['content'] = '<a href=\'/et/uudiste-arhiiv/\'>Uudiste arhiiv >></a> ';
   $handler->display->display_options['footer']['area']['format'] = 'full_html';
 
   /* Display: Страница */
@@ -893,28 +899,28 @@ print "<div><a class=\' button\'  href=\'/node/{$row->nid}/edit?destination=doku
   $handler->display->display_options['pager']['options']['tags']['last'] = 'последняя »';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filtri kriteeriumid: Sisu: Avaldatud */
+  /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filtri kriteeriumid: Sisu: Liik */
+  /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'news' => 'news',
   );
-  /* Filtri kriteeriumid: Sisu: Keel */
+  /* Filter criterion: Content: Language */
   $handler->display->display_options['filters']['language']['id'] = 'language';
   $handler->display->display_options['filters']['language']['table'] = 'node';
   $handler->display->display_options['filters']['language']['field'] = 'language';
   $handler->display->display_options['filters']['language']['value'] = array(
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
-  /* Filtri kriteeriumid: Sisu: Postituse kuupäev */
+  /* Filter criterion: Content: Post date */
   $handler->display->display_options['filters']['created']['id'] = 'created';
   $handler->display->display_options['filters']['created']['table'] = 'node';
   $handler->display->display_options['filters']['created']['field'] = 'created';
@@ -947,14 +953,14 @@ print "<div><a class=\' button\'  href=\'/node/{$row->nid}/edit?destination=doku
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Väli: Sisu: Pealkiri */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Väli: Sisu: Postituse kuupäev */
+  /* Field: Content: Post date */
   $handler->display->display_options['fields']['created']['id'] = 'created';
   $handler->display->display_options['fields']['created']['table'] = 'node';
   $handler->display->display_options['fields']['created']['field'] = 'created';
@@ -965,28 +971,28 @@ print "<div><a class=\' button\'  href=\'/node/{$row->nid}/edit?destination=doku
   $handler->display->display_options['fields']['created']['custom_date_format'] = 'm.Y';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filtri kriteeriumid: Sisu: Avaldatud */
+  /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filtri kriteeriumid: Sisu: Liik */
+  /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'news' => 'news',
   );
-  /* Filtri kriteeriumid: Sisu: Keel */
+  /* Filter criterion: Content: Language */
   $handler->display->display_options['filters']['language']['id'] = 'language';
   $handler->display->display_options['filters']['language']['table'] = 'node';
   $handler->display->display_options['filters']['language']['field'] = 'language';
   $handler->display->display_options['filters']['language']['value'] = array(
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
-  /* Filtri kriteeriumid: Sisu: Postituse kuupäev */
+  /* Filter criterion: Content: Post date */
   $handler->display->display_options['filters']['created']['id'] = 'created';
   $handler->display->display_options['filters']['created']['table'] = 'node';
   $handler->display->display_options['filters']['created']['field'] = 'created';
@@ -1004,6 +1010,7 @@ print "<div><a class=\' button\'  href=\'/node/{$row->nid}/edit?destination=doku
     t('Kasvav'),
     t('Kahanev'),
     t('Block'),
+    t('more'),
     t('<a href=\'/ru/uudiste-arhiiv/\'>Архив новостей >></a> '),
     t('Страница'),
     t('Элементов на страницу'),
@@ -1015,6 +1022,7 @@ print "<div><a class=\' button\'  href=\'/node/{$row->nid}/edit?destination=doku
     t('последняя »'),
     t('Архив новостей'),
     t('Uudiste arhiiv'),
+    t('<a href=\'/et/uudiste-arhiiv/\'>Uudiste arhiiv >></a> '),
   );
   $export['news'] = $view;
 
@@ -1048,7 +1056,7 @@ print "<div><a class=\' button\'  href=\'/node/{$row->nid}/edit?destination=doku
     'nothing' => 'nothing',
   );
   $handler->display->display_options['row_options']['separator'] = '<br>';
-  /* Väli: Sisu: Pealkiri */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -1058,7 +1066,7 @@ print "<div><a class=\' button\'  href=\'/node/{$row->nid}/edit?destination=doku
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
-  /* Väli: Sisu: Image */
+  /* Field: Content: Image */
   $handler->display->display_options['fields']['field_footer_logo_image']['id'] = 'field_footer_logo_image';
   $handler->display->display_options['fields']['field_footer_logo_image']['table'] = 'field_data_field_footer_logo_image';
   $handler->display->display_options['fields']['field_footer_logo_image']['field'] = 'field_footer_logo_image';
@@ -1071,14 +1079,14 @@ print "<div><a class=\' button\'  href=\'/node/{$row->nid}/edit?destination=doku
     'image_style' => '',
     'image_link' => '',
   );
-  /* Väli: Sisu: Link */
+  /* Field: Content: Link */
   $handler->display->display_options['fields']['field_footer_logo_link']['id'] = 'field_footer_logo_link';
   $handler->display->display_options['fields']['field_footer_logo_link']['table'] = 'field_data_field_footer_logo_link';
   $handler->display->display_options['fields']['field_footer_logo_link']['field'] = 'field_footer_logo_link';
   $handler->display->display_options['fields']['field_footer_logo_link']['label'] = '';
   $handler->display->display_options['fields']['field_footer_logo_link']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_footer_logo_link']['element_label_colon'] = FALSE;
-  /* Väli: Globaalne: Kohandatud tekst */
+  /* Field: Global: Custom text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
@@ -1087,14 +1095,14 @@ print "<div><a class=\' button\'  href=\'/node/{$row->nid}/edit?destination=doku
   $handler->display->display_options['fields']['nothing']['element_type'] = 'div';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing']['element_wrapper_type'] = 'div';
-  /* Filtri kriteeriumid: Sisu: Avaldatud */
+  /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filtri kriteeriumid: Sisu: Liik */
+  /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -1114,6 +1122,7 @@ print "<div><a class=\' button\'  href=\'/node/{$row->nid}/edit?destination=doku
     t('Kahanev'),
     t('<a href=\'[field_footer_logo_link]\' target="_blank" alt=\'[title]\' title=\'[title]\'>[field_footer_logo_image]</a>'),
     t('Block'),
+    t('more'),
   );
   $export['right_sidepane_logod'] = $view;
 
@@ -1204,7 +1213,7 @@ print "<div><a class=\' button\'  href=\'/node/{$row->nid}/edit?destination=doku
   $handler->display->display_options['style_options']['views_slideshow_cycle']['cleartype'] = 0;
   $handler->display->display_options['style_options']['views_slideshow_cycle']['cleartypenobg'] = 0;
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Väli: Sisu: Image */
+  /* Field: Content: Image */
   $handler->display->display_options['fields']['field_slider_image']['id'] = 'field_slider_image';
   $handler->display->display_options['fields']['field_slider_image']['table'] = 'field_data_field_slider_image';
   $handler->display->display_options['fields']['field_slider_image']['field'] = 'field_slider_image';
@@ -1215,7 +1224,7 @@ print "<div><a class=\' button\'  href=\'/node/{$row->nid}/edit?destination=doku
     'image_style' => '',
     'image_link' => '',
   );
-  /* Väli: Sisu: Pealkiri */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -1225,19 +1234,19 @@ print "<div><a class=\' button\'  href=\'/node/{$row->nid}/edit?destination=doku
   $handler->display->display_options['fields']['title']['element_type'] = 'p';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
-  /* Lühike kriteerium: Sisu: Postituse kuupäev */
+  /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Filtri kriteeriumid: Sisu: Avaldatud */
+  /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filtri kriteeriumid: Sisu: Liik */
+  /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -1318,7 +1327,7 @@ print "<div><a class=\' button\'  href=\'/node/{$row->nid}/edit?destination=doku
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Väli: Sisu: Pealkiri */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -1329,7 +1338,7 @@ print "<div><a class=\' button\'  href=\'/node/{$row->nid}/edit?destination=doku
   $handler->display->display_options['fields']['title']['element_type'] = 'p';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
-  /* Väli: Sisu: pilt */
+  /* Field: Content: pilt */
   $handler->display->display_options['fields']['field_pilt']['id'] = 'field_pilt';
   $handler->display->display_options['fields']['field_pilt']['table'] = 'field_data_field_pilt';
   $handler->display->display_options['fields']['field_pilt']['field'] = 'field_pilt';
@@ -1341,20 +1350,20 @@ print "<div><a class=\' button\'  href=\'/node/{$row->nid}/edit?destination=doku
     'image_link' => '',
   );
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Lühike kriteerium: Globaalne: Juhuslik */
+  /* Sort criterion: Global: Random */
   $handler->display->display_options['sorts']['random']['id'] = 'random';
   $handler->display->display_options['sorts']['random']['table'] = 'views';
   $handler->display->display_options['sorts']['random']['field'] = 'random';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filtri kriteeriumid: Sisu: Avaldatud */
+  /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filtri kriteeriumid: Sisu: Liik */
+  /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -1370,6 +1379,7 @@ print "<div><a class=\' button\'  href=\'/node/{$row->nid}/edit?destination=doku
     t('Kasvav'),
     t('Kahanev'),
     t('Block'),
+    t('more'),
     t('Christmas_cards'),
   );
   $export['slider'] = $view;
