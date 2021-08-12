@@ -768,7 +768,7 @@ print "<div><a class=\' button\'  href=\'/node/{$row->nid}/edit?destination=doku
   $handler->display->display_options['filters']['type']['value'] = array(
     'news' => 'news',
   );
-  /* Filter criterion: Content: Type (field_uudise_type) */
+  /* Filter criterion: : field_uudise_type (field_uudise_type) */
   $handler->display->display_options['filters']['field_uudise_type_tid']['id'] = 'field_uudise_type_tid';
   $handler->display->display_options['filters']['field_uudise_type_tid']['table'] = 'field_data_field_uudise_type';
   $handler->display->display_options['filters']['field_uudise_type_tid']['field'] = 'field_uudise_type_tid';
@@ -797,6 +797,7 @@ print "<div><a class=\' button\'  href=\'/node/{$row->nid}/edit?destination=doku
     t('järgmine ›'),
     t('viimane »'),
     t('Page'),
+    t('more'),
   );
   $export['karjaariinfo_page'] = $view;
 
@@ -1011,7 +1012,7 @@ print "<div><a class=\' button\'  href=\'/node/{$row->nid}/edit?destination=doku
     t('Kahanev'),
     t('Block'),
     t('more'),
-    t('<a href=\'/ru/uudiste-arhiiv/\'>Архив новостей >></a> '),
+    t('<a href=\'/et/uudiste-arhiiv/\'>Uudiste arhiiv >></a> '),
     t('Страница'),
     t('Элементов на страницу'),
     t('- Все -'),
@@ -1022,7 +1023,6 @@ print "<div><a class=\' button\'  href=\'/node/{$row->nid}/edit?destination=doku
     t('последняя »'),
     t('Архив новостей'),
     t('Uudiste arhiiv'),
-    t('<a href=\'/et/uudiste-arhiiv/\'>Uudiste arhiiv >></a> '),
   );
   $export['news'] = $view;
 
@@ -1379,7 +1379,6 @@ print "<div><a class=\' button\'  href=\'/node/{$row->nid}/edit?destination=doku
     t('Kasvav'),
     t('Kahanev'),
     t('Block'),
-    t('more'),
     t('Christmas_cards'),
   );
   $export['slider'] = $view;

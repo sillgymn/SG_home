@@ -97,6 +97,8 @@ function sg_roles_and_permissions_user_default_permissions() {
     'name' => 'access media browser',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'newsmaker' => 'newsmaker',
     ),
     'module' => 'media',
   );
@@ -154,6 +156,7 @@ function sg_roles_and_permissions_user_default_permissions() {
     'name' => 'add media from remote sources',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'media_internet',
   );
@@ -444,6 +447,8 @@ function sg_roles_and_permissions_user_default_permissions() {
     'name' => 'administer responsive menus',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
+      'newsmaker' => 'newsmaker',
     ),
     'module' => 'responsive_menus',
   );
@@ -559,7 +564,6 @@ function sg_roles_and_permissions_user_default_permissions() {
     'name' => 'bypass node access',
     'roles' => array(
       'administrator' => 'administrator',
-      'editor' => 'editor',
     ),
     'module' => 'node',
   );
@@ -649,6 +653,7 @@ function sg_roles_and_permissions_user_default_permissions() {
     'name' => 'create files',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'file_entity',
   );
@@ -725,7 +730,9 @@ function sg_roles_and_permissions_user_default_permissions() {
   // Exported permission: 'create worker content'.
   $permissions['create worker content'] = array(
     'name' => 'create worker content',
-    'roles' => array(),
+    'roles' => array(
+      'editor' => 'editor',
+    ),
     'module' => 'node',
   );
 
@@ -1024,7 +1031,9 @@ function sg_roles_and_permissions_user_default_permissions() {
   // Exported permission: 'delete own worker content'.
   $permissions['delete own worker content'] = array(
     'name' => 'delete own worker content',
-    'roles' => array(),
+    'roles' => array(
+      'editor' => 'editor',
+    ),
     'module' => 'node',
   );
 
@@ -1279,7 +1288,9 @@ function sg_roles_and_permissions_user_default_permissions() {
   // Exported permission: 'edit any worker content'.
   $permissions['edit any worker content'] = array(
     'name' => 'edit any worker content',
-    'roles' => array(),
+    'roles' => array(
+      'editor' => 'editor',
+    ),
     'module' => 'node',
   );
 
@@ -1435,7 +1446,9 @@ function sg_roles_and_permissions_user_default_permissions() {
   // Exported permission: 'edit own worker content'.
   $permissions['edit own worker content'] = array(
     'name' => 'edit own worker content',
-    'roles' => array(),
+    'roles' => array(
+      'editor' => 'editor',
+    ),
     'module' => 'node',
   );
 
@@ -1606,6 +1619,7 @@ function sg_roles_and_permissions_user_default_permissions() {
     'name' => 'use media wysiwyg',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'media_wysiwyg',
   );
@@ -1688,6 +1702,7 @@ function sg_roles_and_permissions_user_default_permissions() {
     'name' => 'view own files',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'file_entity',
   );
@@ -1697,6 +1712,7 @@ function sg_roles_and_permissions_user_default_permissions() {
     'name' => 'view own private files',
     'roles' => array(
       'administrator' => 'administrator',
+      'editor' => 'editor',
     ),
     'module' => 'file_entity',
   );

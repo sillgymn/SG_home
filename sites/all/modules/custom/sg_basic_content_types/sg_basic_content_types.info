@@ -60,7 +60,6 @@ features[field_instance][] = node-image_gallery-field_photos
 features[field_instance][] = node-image_gallery-field_year
 features[field_instance][] = node-news-body
 features[field_instance][] = node-news-field_news_gallery
-features[field_instance][] = node-news-field_uudise_type
 features[field_instance][] = node-page-body
 features[field_instance][] = node-projektid-field_footer_logo_image
 features[field_instance][] = node-projektid-field_footer_logo_link
