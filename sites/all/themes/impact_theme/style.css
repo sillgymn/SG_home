@@ -2137,3 +2137,13 @@ margin : 0 !important;
 .field-name-field-sg-muuseumi-pildid .field-item {
     display: inline-block
 }
+/***************MUUSEUMI PAGE END *********/
+
+/***************SUUNA PAGE START *********/
+.view-g-mnaasiumi-ppekava-ja-ppesuunad .views-row {
+    display: inline-block;
+  padding-right: 40px;
+  padding-bottom: 40px;
+ 
+}
+    

@@ -125,7 +125,7 @@ function impact_theme_preprocess_node(&$variables) {
     $show_read_more = 1;
     $body = $node->body['und'][0]['safe_value'];
     $galery_images =  $field = field_get_items('node', $node, 'field_news_gallery'); 
-    if (isset($galery_images) && count($galery_images) > 1 )  {
+    if (isset($galery_images) && is_array($galery_images) && count($galery_images) > 1 )  {
           
     }
     else {
